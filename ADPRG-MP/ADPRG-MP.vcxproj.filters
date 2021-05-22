@@ -21,15 +21,6 @@
     <ClCompile Include="AGameObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="AirplanePlayer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AirplaneSupport.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AirplaneSupportMovement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="APoolable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -37,9 +28,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AScene.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="BGMovement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="BGObject.cpp">
@@ -52,15 +40,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EmptyGameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyAirplane.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemyBehavior.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="EnemySwarmHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
@@ -102,19 +81,10 @@
     <ClCompile Include="PhysicsManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PlayerAttack.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerInputController.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="PlayerMovement.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Projectile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ProjectileMovement.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="QuitScreen.cpp">
@@ -155,15 +125,6 @@
     <ClInclude Include="AGameObject.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="AirplanePlayer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AirplaneSupport.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AirplaneSupportMovement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="APoolable.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -174,9 +135,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AScene.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="BGMovement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="BGObject.h">
@@ -195,15 +153,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EmptyGameObject.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyAirplane.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemyBehavior.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="EnemySwarmHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
@@ -242,19 +191,10 @@
     <ClInclude Include="PhysicsManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PlayerAttack.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerInputController.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="PlayerMovement.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Projectile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ProjectileMovement.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="QuitScreen.h">
