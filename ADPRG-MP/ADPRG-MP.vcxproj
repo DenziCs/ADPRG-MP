@@ -149,6 +149,7 @@
     <ClCompile Include="AScene.cpp" />
     <ClCompile Include="BGObject.cpp" />
     <ClCompile Include="Collider.cpp" />
+    <ClCompile Include="ContactResolver.cpp" />
     <ClCompile Include="DebugRendererFactory.cpp" />
     <ClCompile Include="EmptyGameObject.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="ButtonListener.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionListener.h" />
+    <ClInclude Include="ContactResolver.h" />
     <ClInclude Include="DebugRendererFactory.h" />
     <ClInclude Include="EmptyGameObject.h" />
     <ClInclude Include="Entity.h" />

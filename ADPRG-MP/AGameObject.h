@@ -29,8 +29,8 @@ public:
 
 	sf::Transformable* getTransformable();
 
-	virtual sf::FloatRect getLocalBounds();
-	virtual sf::FloatRect getGlobalBounds();
+	virtual sf::FloatRect getLocalBounds() = 0;
+	virtual sf::FloatRect getGlobalBounds() = 0;
 	sf::Transform getGlobalTransform();
 
 	AGameObject* getParent();
