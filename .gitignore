@@ -32,3 +32,6 @@
 *.app
 
 .vs/
+/ADPRG-MP/Debug/ADPRG-MP.tlog
+/ADPRG-MP/Debug
+/Debug
