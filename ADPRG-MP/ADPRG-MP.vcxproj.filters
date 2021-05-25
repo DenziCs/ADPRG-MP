@@ -126,6 +126,18 @@
     <ClCompile Include="EnemyObject.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BombObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SoftBlockObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PillarObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EnemySwarmHandler.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AComponent.h">
@@ -243,6 +255,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EnemyObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="BombObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SoftBlockObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PillarObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EnemySwarmHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
