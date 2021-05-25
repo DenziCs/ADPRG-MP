@@ -9,7 +9,7 @@
 
 HUDScreen::HUDScreen(string name) : AGameObject(name), ButtonListener()
 {
-
+	this->objectType = Misc;
 }
 
 HUDScreen::~HUDScreen()

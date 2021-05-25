@@ -2,7 +2,7 @@
 
 EmptyGameObject::EmptyGameObject(string name) : AGameObject(name)
 {
-
+	this->objectType = Misc;
 }
 
 EmptyGameObject::~EmptyGameObject()
