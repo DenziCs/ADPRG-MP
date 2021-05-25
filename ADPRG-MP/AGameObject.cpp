@@ -29,6 +29,11 @@ AGameObject::~AGameObject() {
 std::string AGameObject::getName() {
 	return name;
 }
+
+AGameObject::ObjectType AGameObject::getObjectType() {
+	return objectType;
+}
+
 void AGameObject::draw(sf::RenderWindow* targetWindow, sf::RenderStates renderStates) {
 	if (!this->isEnabled()) {
 		return;
@@ -200,11 +205,11 @@ std::vector<AComponent*> AGameObject::getComponentsRecursiveProper(AGameObject* 
 }
 
 sf::FloatRect AGameObject::getLocalBounds() {
-	throw "getLocalBounds() not implemented!";
+	throw "getLocalBounds() not yet implemented!";
 }
 
 sf::FloatRect AGameObject::getGlobalBounds() {
-	throw "getLocalBounds() not implemented!";
+	throw "getGlobalBounds() not implemented!";
 }
 
 sf::Transform AGameObject::getGlobalTransform() {

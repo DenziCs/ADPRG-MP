@@ -35,8 +35,8 @@ void Renderer::perform() {
 Renderer* Renderer::Create(string name, string resourceName, RendererType rendererType) {
 	switch (rendererType) {
 		case RendererType::Sprite:
-				return new SpriteRenderer(name, resourceName);
-				break;
+			return new SpriteRenderer(name, resourceName);
+			break;
 		case RendererType::Custom:
 		default: 
 			return new Renderer(name);
@@ -46,4 +46,3 @@ Renderer* Renderer::Create(string name, string resourceName, RendererType render
 Renderer* Renderer::CreateSprite(string name, string resourceName) {
 	return Renderer::Create(name, resourceName, RendererType::Sprite);
 }
-

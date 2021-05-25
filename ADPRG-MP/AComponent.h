@@ -1,8 +1,8 @@
 #pragma once
 #include <string>
 #include <SFML/Graphics.hpp>
-
 using namespace std;
+
 class AGameObject; //perform forward declaration to avoid circular import dependency
 
 class AComponent

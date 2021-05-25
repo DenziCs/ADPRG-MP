@@ -1,13 +1,12 @@
 #include "GameScene.h"
 #include "BGObject.h"
-#include "AirplanePlayer.h"
+#include "PlayerObject.h"
 #include "AirplaneSupport.h"
 #include "EnemyAirplane.h"
 #include "GameObjectPool.h"
 #include "ObjectPoolHolder.h"
 #include "EmptyGameObject.h"
 #include "EnemySwarmHandler.h"
-#include "HUDScreen.h"
 
 GameScene::GameScene() :AScene("GameScene")
 {
@@ -24,14 +23,10 @@ void GameScene::onLoadResources()
 
 void GameScene::onLoadObjects()
 {
-    EmptyGameObject* physics = new EmptyGameObject("physics");
-    this->registerObject(physics);
-    PhysicsManager::getInstance()->initialize(PhysicsManager::PHYSICS_MANAGER_TAG, physics);
-
     BGObject* bgObject = new BGObject("BGObject");
     this->registerObject(bgObject);
 
-    AirplanePlayer* planeObject = new AirplanePlayer("PlaneObject");
+    PlayerObject* planeObject = new PlayerObject("PlaneObject");
     this->registerObject(planeObject);
 
     AirplaneSupport* support1 = new AirplaneSupport("AirSupport_1");
@@ -42,8 +37,8 @@ void GameScene::onLoadObjects()
     planeObject->attachChild(support2);
     support2->setPosition(-50, 100);
 
-    HUDScreen* hudScreen = new HUDScreen("HUDScreen");
-    this->registerObject(hudScreen);
+    //HUDScreen* hudScreen = new HUDScreen("HUDScreen");
+    //this->registerObject(hudScreen);
 
     //create N enemies via object pooling
     srand(time(NULL));
@@ -51,6 +46,10 @@ void GameScene::onLoadObjects()
     EnemySwarmHandler* swarmHandler = new EnemySwarmHandler(10, "SwarmHandler");
     enemiesManager->attachComponent(swarmHandler);
     this->registerObject(enemiesManager);
+
+    EmptyGameObject* physics = new EmptyGameObject("physics");
+    this->registerObject(physics);
+    PhysicsManager::getInstance()->initialize(PhysicsManager::PHYSICS_MANAGER_TAG, physics);
 }
 
 void GameScene::onUnloadObjects()

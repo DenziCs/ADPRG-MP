@@ -1,5 +1,7 @@
 
 #include "PlayerInputController.h"
+#include "QuitScreen.h"
+#include "GameObjectManager.h"
 
 PlayerInputController::PlayerInputController(string name) : GenericInputController(name)
 {
@@ -36,6 +38,12 @@ void PlayerInputController::perform()
 	case sf::Keyboard::Space:
 		this->firing = keyFlag;
 		break;
+	}
+	//will create multiple if escape key is released multiple times
+	if (event.type == sf::Event::KeyReleased && event.key.code == sf::Keyboard::Escape) {
+		QuitScreen* quitScreen = new QuitScreen("quitScreen");
+		quitScreen->markGameQuit();
+		GameObjectManager::getInstance()->addObject(quitScreen);
 	}
 }
 

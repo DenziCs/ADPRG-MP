@@ -5,6 +5,7 @@
 
 class Game {
     public:
+        static const int TILE_SIZE = 40;
         static const int WINDOW_WIDTH = 1024;
         static const int WINDOW_HEIGHT = 768;
         const sf::Time TimePerFrame = sf::seconds(1.f / 60.f);
