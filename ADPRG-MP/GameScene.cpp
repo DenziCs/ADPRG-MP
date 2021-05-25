@@ -1,6 +1,6 @@
 #include "GameScene.h"
 #include "BGObject.h"
-#include "AirplanePlayer.h"
+#include "PlayerObject.h"
 #include "AirplaneSupport.h"
 #include "EnemyAirplane.h"
 #include "GameObjectPool.h"
@@ -24,14 +24,10 @@ void GameScene::onLoadResources()
 
 void GameScene::onLoadObjects()
 {
-    EmptyGameObject* physics = new EmptyGameObject("physics");
-    this->registerObject(physics);
-    PhysicsManager::getInstance()->initialize(PhysicsManager::PHYSICS_MANAGER_TAG, physics);
-
     BGObject* bgObject = new BGObject("BGObject");
     this->registerObject(bgObject);
 
-    AirplanePlayer* planeObject = new AirplanePlayer("PlaneObject");
+    PlayerObject* planeObject = new PlayerObject("PlaneObject");
     this->registerObject(planeObject);
 
     AirplaneSupport* support1 = new AirplaneSupport("AirSupport_1");
@@ -51,6 +47,10 @@ void GameScene::onLoadObjects()
     EnemySwarmHandler* swarmHandler = new EnemySwarmHandler(10, "SwarmHandler");
     enemiesManager->attachComponent(swarmHandler);
     this->registerObject(enemiesManager);
+
+    EmptyGameObject* physics = new EmptyGameObject("physics");
+    this->registerObject(physics);
+    PhysicsManager::getInstance()->initialize(PhysicsManager::PHYSICS_MANAGER_TAG, physics);
 }
 
 void GameScene::onUnloadObjects()

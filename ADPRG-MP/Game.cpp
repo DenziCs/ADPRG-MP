@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include "GameObjectManager.h"
 #include "BGObject.h"
-#include "AirplanePlayer.h"
+#include "PlayerObject.h"
 #include "AirplaneSupport.h"
 #include "MainMenuScreen.h"
 #include "FontManager.h"
@@ -19,7 +19,7 @@
 #include"PhysicsManager.h"
 
 Game::Game() : 
-mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "SFML Application") {
+mWindow(sf::VideoMode(Game::TILE_SIZE * 20, Game::TILE_SIZE * 15), "Explosion Lad") {
     TextureManager::getInstance()->loadAll();
     FontManager::getInstance()->loadAll();
     ApplicationManager::getInstance()->initialize(&this->mWindow);
@@ -108,4 +108,3 @@ void Game::render() {
   GameObjectManager::getInstance()->draw(&mWindow);
   mWindow.display();
 }
-

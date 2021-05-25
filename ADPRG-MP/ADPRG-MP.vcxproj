@@ -152,6 +152,7 @@
     <ClCompile Include="ContactResolver.cpp" />
     <ClCompile Include="DebugRendererFactory.cpp" />
     <ClCompile Include="EmptyGameObject.cpp" />
+    <ClCompile Include="EnemyObject.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FontManager.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -193,6 +194,7 @@
     <ClInclude Include="ContactResolver.h" />
     <ClInclude Include="DebugRendererFactory.h" />
     <ClInclude Include="EmptyGameObject.h" />
+    <ClInclude Include="EnemyObject.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="FontManager.h" />
     <ClInclude Include="Game.h" />

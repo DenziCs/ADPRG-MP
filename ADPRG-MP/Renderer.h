@@ -22,8 +22,5 @@ protected:
 	sf::Drawable* drawable = NULL;
 private:
 	sf::RenderWindow* targetWindow = NULL;
-	
 	sf::RenderStates renderStates = sf::RenderStates::Default;
 };
-
-

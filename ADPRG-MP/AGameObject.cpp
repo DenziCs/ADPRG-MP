@@ -204,6 +204,14 @@ std::vector<AComponent*> AGameObject::getComponentsRecursiveProper(AGameObject* 
 	return foundList;
 }
 
+sf::FloatRect AGameObject::getLocalBounds() {
+	throw "getLocalBounds() not yet implemented!";
+}
+
+sf::FloatRect AGameObject::getGlobalBounds() {
+	throw "getGlobalBounds() not implemented!";
+}
+
 sf::Transform AGameObject::getGlobalTransform() {
 	AGameObject* parentObj = this;
 	vector<AGameObject*> parentList;
