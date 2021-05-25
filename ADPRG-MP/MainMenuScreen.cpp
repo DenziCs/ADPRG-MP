@@ -40,7 +40,7 @@ void MainMenuScreen::initialize()
 
 	UIButton* button1 = new UIButton("button_1", btnNormal, btnPressed);
 	this->attachChild(button1);
-	button1->setPosition(0, -50);
+	button1->setPosition(0, 30);
 	button1->getTransformable()->setScale(0.3f, 0.3f); 
 	button1->setButtonListener(this);
 	
@@ -53,7 +53,7 @@ void MainMenuScreen::initialize()
 
 	UIButton* button2 = new UIButton("button_2", btnNormal, btnPressed);
 	this->attachChild(button2);
-	button2->setPosition(0, 50);
+	button2->setPosition(0, 140);
 	button2->getTransformable()->setScale(0.3f, 0.3f);
 	button2->setButtonListener(this);
 	UIText* button_2Text = new UIText("text_1");
