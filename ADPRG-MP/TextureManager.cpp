@@ -28,6 +28,7 @@ void TextureManager::loadAll() {
 	loadTexture("avenger", "Media/Textures/Avenger.png");
 	loadTexture("title_bg", "Media/Textures/TitleScreenBG.png");
 	loadTexture("bullet", "Media/Textures/Bullet.png");
+	loadTexture("pillar", "Media/Textures/block.png");
 }
 
 void TextureManager::loadTexture(std::string key, std::string path) {

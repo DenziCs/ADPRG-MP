@@ -9,7 +9,7 @@
 #include "FontManager.h"
 #include "ApplicationManager.h"
 #include "HUDScreen.h"
-#include "EnemyAirplane.h"
+#include "EnemyObject.h"
 #include "GameObjectPool.h"
 #include "EmptyGameObject.h"
 #include "EnemySwarmHandler.h"

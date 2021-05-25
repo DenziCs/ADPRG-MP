@@ -35,9 +35,11 @@ void EnemyObject::initialize()
 	renderer->assignDrawable(this->sprite);
 	this->attachComponent(renderer);
 
+	/*
 	EnemyBehavior* behavior = new EnemyBehavior("EnemyBehavior");
 	this->attachComponent(behavior);
 	behavior->configure(1.0f);
+	*/
 }
 
 sf::FloatRect EnemyObject::getGlobalBounds() {
@@ -49,8 +51,10 @@ sf::FloatRect EnemyObject::getGlobalBounds() {
 void EnemyObject::onActivate()
 {
 	//reset state
+	/*
 	EnemyBehavior* behavior = (EnemyBehavior*)this->findComponentByName("EnemyBehavior");
 	behavior->reset();
+	*/
 }
 
 APoolable* EnemyObject::clone()

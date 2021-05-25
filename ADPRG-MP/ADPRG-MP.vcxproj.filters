@@ -270,4 +270,75 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="Media\Textures\block.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\Avenger.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\b_1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\b_2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\b_3.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\b_4.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\b_5.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\b_6.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\b_7.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\b_8.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\bar_1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\bar_2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\Bullet.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\Desert.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\Eagle.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\f.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\field.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\l1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\l2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\Raptor.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\s1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\s2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\TitleScreenBG.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
 </Project>

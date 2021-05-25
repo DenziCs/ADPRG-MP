@@ -32,7 +32,7 @@ void GameScene::onLoadObjects()
     for (int i = 0; i < 40; i++) {
         PillarObject* pillar = new PillarObject("HardBlock");
         this->registerObject(pillar);
-        pillar->setPosition(40 * ((i % 8) + 2), 40 * ((i / 8) + 4));
+        pillar->setPosition(80 * ((i % 8) + 1), 80 * ((i / 8) + 2));
     }
 
     PlayerObject* planeObject = new PlayerObject("PlaneObject");
