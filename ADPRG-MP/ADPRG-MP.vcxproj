@@ -165,6 +165,7 @@
     <ClCompile Include="MainMenuScreen.cpp" />
     <ClCompile Include="ObjectPoolHolder.cpp" />
     <ClCompile Include="PhysicsManager.cpp" />
+    <ClCompile Include="PlayerObject.cpp" />
     <ClCompile Include="PlayerInputController.cpp" />
     <ClCompile Include="PlayerMovement.cpp" />
     <ClCompile Include="QuitScreen.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="MainMenuScreen.h" />
     <ClInclude Include="ObjectPoolHolder.h" />
     <ClInclude Include="PhysicsManager.h" />
+    <ClInclude Include="PlayerObject.h" />
     <ClInclude Include="PlayerInputController.h" />
     <ClInclude Include="PlayerMovement.h" />
     <ClInclude Include="QuitScreen.h" />

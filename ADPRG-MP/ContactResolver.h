@@ -6,8 +6,9 @@ public:
 	enum ContactType {
 		PlayerBomb = 0,
 		PlayerEnemy = 1,
-		EnemyBomb = 2,
-		SoftblockBomb = 3
+		PlayerPowerup = 2,
+		EnemyBomb = 3,
+		SoftblockBomb = 4
 	};
 
 	ContactResolver() {};

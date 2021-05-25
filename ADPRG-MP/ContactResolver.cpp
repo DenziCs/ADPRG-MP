@@ -11,6 +11,8 @@ void ContactResolver::resolve() {
 	case PlayerBomb:
 	case PlayerEnemy:
 		break;
+	case PlayerPowerup:
+		break;
 	case EnemyBomb:
 		break;
 	case SoftblockBomb:

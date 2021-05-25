@@ -29,6 +29,11 @@ AGameObject::~AGameObject() {
 std::string AGameObject::getName() {
 	return name;
 }
+
+AGameObject::ObjectType AGameObject::getObjectType() {
+	return objectType;
+}
+
 void AGameObject::draw(sf::RenderWindow* targetWindow, sf::RenderStates renderStates) {
 	if (!this->isEnabled()) {
 		return;

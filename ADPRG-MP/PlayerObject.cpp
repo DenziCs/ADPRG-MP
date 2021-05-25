@@ -1,4 +1,4 @@
-#include "AirplanePlayer.h"
+#include "PlayerObject.h"
 #include <iostream>
 #include "Game.h"
 #include "PlayerInputController.h"
@@ -10,13 +10,11 @@
 #include "DebugRendererFactory.h"
 #include<iostream>
 
-AirplanePlayer::AirplanePlayer(string name) : AGameObject(name) {
-
+PlayerObject::PlayerObject(string name) : AGameObject(name) {
+    this->objectType = Player;
 }
 
-void AirplanePlayer::initialize() {
-	std::cout << "Declared as " << this->getName() << "\n";
-
+void PlayerObject::initialize() {
     this->transformable.setPosition(Game::WINDOW_WIDTH / 2, Game::WINDOW_HEIGHT / 2);
 
     PlayerInputController* inputController = new PlayerInputController("MyPlayerInput");
@@ -27,7 +25,7 @@ void AirplanePlayer::initialize() {
 
     // Renderer* renderer = Renderer::Create("AirplanePlayerRenderer", "eagle", RendererType::Sprite);
     ARendererFactory* factory = new RendererFactory();
-    Renderer* renderer = factory->createSprite("AirplanePlayerRenderer", "eagle");
+    Renderer* renderer = factory->createSprite("PlayerRenderer", "eagle");
     this->attachComponent(renderer);
 
     PlayerAttack* attack = new PlayerAttack("MyAttack");

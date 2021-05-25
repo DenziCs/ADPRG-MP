@@ -5,10 +5,10 @@
 
 using namespace std;
 
-class AirplanePlayer : public AGameObject
+class PlayerObject : public AGameObject
 {
 public:
-	AirplanePlayer(string name);
+	PlayerObject(string name);
 	void initialize();
 private:
 	const float SPEED_MULTIPLIER = 300.0f;
