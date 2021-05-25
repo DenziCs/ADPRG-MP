@@ -7,7 +7,6 @@
 #include "ObjectPoolHolder.h"
 #include "EmptyGameObject.h"
 #include "EnemySwarmHandler.h"
-#include "HUDScreen.h"
 
 GameScene::GameScene() :AScene("GameScene")
 {
@@ -38,8 +37,8 @@ void GameScene::onLoadObjects()
     planeObject->attachChild(support2);
     support2->setPosition(-50, 100);
 
-    HUDScreen* hudScreen = new HUDScreen("HUDScreen");
-    this->registerObject(hudScreen);
+    //HUDScreen* hudScreen = new HUDScreen("HUDScreen");
+    //this->registerObject(hudScreen);
 
     //create N enemies via object pooling
     srand(time(NULL));
