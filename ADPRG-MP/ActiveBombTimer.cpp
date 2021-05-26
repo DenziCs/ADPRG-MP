@@ -15,7 +15,7 @@ void ActiveBombTimer::perform()
 	this->timer -= this->deltaTime.asSeconds();
 
 	if (timer <= 0) {
-		ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::BOMB_POOL_TAG)->releasePoolable((APoolable*)this->getOwner());
+		ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::EXPLOSION_POOL_TAG)->releasePoolable((APoolable*)this->getOwner());
 	}
 }
 

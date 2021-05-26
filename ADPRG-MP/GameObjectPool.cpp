@@ -77,6 +77,7 @@ void GameObjectPool::releasePoolable(APoolable* poolableObject)
 	for (int i = 0; i < this->usedObjects.size(); i++) {
 		if (this->usedObjects[i] == poolableObject) {
 			index = i;
+			cout << "Released!" << endl;
 			break;
 		}
 	}
