@@ -14,45 +14,28 @@ void PhysicsManager::initialize(string name, AGameObject* parent) {
 }
 
 PhysicsManager::~PhysicsManager() {
-	trackedObjects.clear();
-	forCleaningObjects.clear();
+	collisionList.clear();
 	AComponent::~AComponent();
 }
 
-void PhysicsManager::destroy() {
+void PhysicsManager::addContact(ContactResolver* resolver) {
+	collisionList.push_back(resolver);
 }
 
-void PhysicsManager::trackObject(Collider* object) {
-	trackedObjects.push_back(object);
-}
-
-void PhysicsManager::untrackObject(Collider* object) {
-	int oldSize = trackedObjects.size();
-	for (int i = 0; i < oldSize; i++) {
-		if (trackedObjects[i] == object) {
-			trackedObjects.erase(trackedObjects.begin() + i);
-			break;
+void PhysicsManager::getContacts() {
+	PlayerObject* player = (PlayerObject*)GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Player)[0];
+	vector<AGameObject*> toCheck = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Enemy);
+	int size = toCheck.size();
+	for (int i = 0; i < size; i++) {
+		if (player->getGlobalBounds().intersects(toCheck[i]->getGlobalBounds())) {
+			ContactResolver* contact = new ContactResolver(player, toCheck[i], ContactResolver::PlayerEnemy);
+			addContact(contact);
 		}
 	}
-}
-
-void PhysicsManager::cleanUpObjects() {
-
 }
 
 void PhysicsManager::perform() {
-	for (int i = 0; i < trackedObjects.size(); i++) {
-		for (int j = i + 1; j < trackedObjects.size(); j++) {
-			CollisionListener* listener1 = (CollisionListener*)trackedObjects[i]->getOwner();
-			CollisionListener* listener2 = (CollisionListener*)trackedObjects[j]->getOwner();
-			if (listener1->colliderType != listener2->colliderType) {
-				if (trackedObjects[i]->willCollide(trackedObjects[j])) {
-					trackedObjects[i]->setAlreadyCollided(true);
-					trackedObjects[j]->setAlreadyCollided(true);
-				}
-			}
-		}
-
-		trackedObjects[i]->perform();
-	}
+	this->getContacts();
+	iterator.resolveContacts(collisionList);
+	collisionList.clear();
 }

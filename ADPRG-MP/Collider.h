@@ -2,12 +2,12 @@
 #include "AComponent.h"
 #include "CollisionListener.h"
 #include "AGameObject.h"
+#include"PhysicsManager.h"
+
 class Collider : public AComponent {
 
 public:
 	Collider(string name) : AComponent(name, Physics) {}
-
-	void setCollisionListener(CollisionListener* listener);
 
 	void setChecked(bool flag);
 	bool isChecked();

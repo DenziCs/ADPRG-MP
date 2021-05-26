@@ -1,4 +1,5 @@
 #include "ContactResolver.h"
+#include"ApplicationManager.h"
 
 ContactResolver::ContactResolver(AGameObject* object1, AGameObject* object2, ContactType type) {
 	objects[0] = object1;
@@ -10,6 +11,7 @@ void ContactResolver::resolve() {
 	switch (contactType) {
 	case PlayerBomb:
 	case PlayerEnemy:
+		ApplicationManager::getInstance()->applicationQuit();
 		break;
 	case PlayerPowerup:
 		break;

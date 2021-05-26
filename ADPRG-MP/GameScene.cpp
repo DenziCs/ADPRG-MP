@@ -49,11 +49,9 @@ void GameScene::onLoadObjects()
     HUDScreen* hudScreen = new HUDScreen("HUDScreen");
     this->registerObject(hudScreen);
 
-    /*
     EmptyGameObject* physics = new EmptyGameObject("physics");
     this->registerObject(physics);
     PhysicsManager::getInstance()->initialize(PhysicsManager::PHYSICS_MANAGER_TAG, physics);
-    */
 }
 
 void GameScene::onUnloadObjects()

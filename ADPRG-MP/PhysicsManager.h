@@ -4,10 +4,17 @@
 #include"APoolable.h"
 #include <unordered_map>
 #include <vector>
-#include "Collider.h"
+#include "ContactResolver.h"
+#include"ContactResolverIterator.h"
 #include"ObjectPoolHolder.h"
+#include"GameObjectManager.h"
+#include"PlayerObject.h"
+#include"ActiveBombObject.h"
+#include"BombObject.h"
+#include"EnemyObject.h"
+#include"SoftBlockObject.h"
 
-typedef std::vector<Collider*> CollisionList;
+typedef std::vector<ContactResolver*> CollisionList;
 
 class PhysicsManager : public AComponent
 {
@@ -15,23 +22,19 @@ public:
 	static string PHYSICS_MANAGER_TAG;
 
 	static void initialize(string name, AGameObject* parent);
-	static void destroy();
 	static PhysicsManager* getInstance();
 	~PhysicsManager();
 
-	void trackObject(Collider* object);
-	void untrackObject(Collider* object);
-
 	void perform();
-
 private:
-	PhysicsManager(string name) : AComponent(name, Script) {};
+	PhysicsManager(string name) : AComponent(name, Script) { iterator.max_iterations = 25; };
 	PhysicsManager(PhysicsManager const&) : AComponent(name, Script) {};             // copy constructor is private
 	PhysicsManager& operator=(PhysicsManager const&) {};  // assignment operator is private
 	static PhysicsManager* sharedInstance;
 
-	CollisionList trackedObjects;
-	CollisionList forCleaningObjects;
+	void addContact(ContactResolver* object);
+	void getContacts();
 
-	void cleanUpObjects();
+	CollisionList collisionList;
+	ContactResolverIterator iterator;
 };
