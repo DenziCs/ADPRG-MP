@@ -8,7 +8,7 @@ public:
 	~PlayerMovement();
 
 	void perform();
-
+	// bool hasCollided();
 private:
 	const float SPEED_MULTIPLIER = 60.0f;
 };

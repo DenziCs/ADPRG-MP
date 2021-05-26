@@ -52,6 +52,7 @@ void GameScene::onLoadObjects()
     cout << planeObject->getGlobalBounds().top << endl;
     cout << planeObject->getGlobalBounds().height << endl;
 
+    srand(time(NULL));
     EmptyGameObject* enemiesManager = new EmptyGameObject("EnemiesManager");
     EnemySwarmHandler* swarmHandler = new EnemySwarmHandler(1, "SwarmHandler");
     enemiesManager->attachComponent(swarmHandler);

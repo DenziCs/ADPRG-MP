@@ -33,15 +33,14 @@ void EnemyObject::initialize()
 	renderer->assignDrawable(this->sprite);
 	this->attachComponent(renderer);
 
-	srand(time(0));
 	int rando = rand() % 2;
 	EnemyBehavior::EnemyMovementType type;
 	if (rando == 0) type = EnemyBehavior::Vertical;
 	else type = EnemyBehavior::Horizontal;
 
 	bool runner;
-	if (this->enemyType == Walker) runner = false;
-	else runner = true;
+	if (this->enemyType == Runner) runner = true;
+	else runner = false;
 
 	EnemyBehavior* behavior = new EnemyBehavior("EnemyBehavior", type, runner);
 	this->attachComponent(behavior);
