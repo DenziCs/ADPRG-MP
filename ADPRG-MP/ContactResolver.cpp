@@ -25,9 +25,6 @@ void ContactResolver::resolve() {
 			break;
 		case AGameObject::ActiveBomb:
 			GameObjectManager::getInstance()->deleteObject(objects[0]);
-			ObjectPoolHolder::getInstance()->
-				getPool(ObjectPoolHolder::EXPLOSION_POOL_TAG)->
-				releasePoolable((APoolable*)objects[1]);
 			break;
 		}
 	break;

@@ -10,8 +10,19 @@ BombExplosion::~BombExplosion()
 	AComponent::~AComponent();
 }
 
-bool BombExplosion::hasCollided(ActiveBombObject* explosion) {
+bool BombExplosion::hasCollided(ActiveBombObject* explosion, Direction direction) {
 	sf::FloatRect bounds = explosion->getGlobalBounds();
+
+	switch (direction) {
+	case Up:
+		if (bounds.top <= Game::TILE_SIZE * 3) return true; break;
+	case Right:
+		if (bounds.left + bounds.width >= Game::WINDOW_WIDTH - Game::TILE_SIZE * 2) return true; break;
+	case Down:
+		if (bounds.top + bounds.height >= Game::WINDOW_HEIGHT - Game::TILE_SIZE) return true;  break;
+	case Left:
+		if (bounds.left <= Game::TILE_SIZE) return true; break;
+	}
 
 	vector<AGameObject*> toSearch = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Hardblock);
 	for (int i = 0; i < toSearch.size(); i++) {
@@ -36,25 +47,25 @@ void BombExplosion::explode() {
 		// Upwards
 		ActiveBombObject* bomb1 = (ActiveBombObject*)activePool->requestPoolable();
 		bomb1->setPosition(spawnpoint.x, spawnpoint.y - i * Game::TILE_SIZE);
-		if(hasCollided(bomb1))
+		if(hasCollided(bomb1, Up))
 			ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::EXPLOSION_POOL_TAG)->releasePoolable(bomb1);
 
 		// To the right
 		ActiveBombObject* bomb2 = (ActiveBombObject*)activePool->requestPoolable();
 		bomb2->setPosition(spawnpoint.x + i * Game::TILE_SIZE, spawnpoint.y);
-		if (hasCollided(bomb2))
+		if (hasCollided(bomb2, Right))
 			ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::EXPLOSION_POOL_TAG)->releasePoolable(bomb2);
 
 		// Downwards
 		ActiveBombObject* bomb3 = (ActiveBombObject*)activePool->requestPoolable();
 		bomb3->setPosition(spawnpoint.x, spawnpoint.y + i * Game::TILE_SIZE);
-		if (hasCollided(bomb3))
+		if (hasCollided(bomb3, Down))
 			ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::EXPLOSION_POOL_TAG)->releasePoolable(bomb3);
 
 		// To the left
 		ActiveBombObject* bomb4 = (ActiveBombObject*)activePool->requestPoolable();
 		bomb4->setPosition(spawnpoint.x - i * Game::TILE_SIZE, spawnpoint.y);
-		if (hasCollided(bomb4))
+		if (hasCollided(bomb4, Left))
 			ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::EXPLOSION_POOL_TAG)->releasePoolable(bomb4);
 	}
 }
