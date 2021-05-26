@@ -5,6 +5,7 @@
 #include"EmptyGameObject.h"
 #include"TransitionUpdate.h"
 #include"Game.h"
+#include<SFML/Audio.hpp>
 
 class TransitionScene : public AScene
 {
@@ -20,4 +21,5 @@ public:
 	string nextScene;
 private:
 	float timer = 2.5f;
+	sf::Sound* sound;
 };

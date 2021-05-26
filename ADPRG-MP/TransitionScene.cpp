@@ -1,6 +1,9 @@
 #include "TransitionScene.h"
+#include"AudioManager.h"
 
-TransitionScene::TransitionScene() : AScene("TransitionScene") {}
+TransitionScene::TransitionScene() : AScene("TransitionScene") {
+	this->sound = new sf::Sound();
+}
 
 void TransitionScene::onLoadObjects() {
 	UIText* text = new UIText("Text");
@@ -18,9 +21,14 @@ void TransitionScene::onLoadObjects() {
 
 	TransitionUpdate* updater = new TransitionUpdate("timerUpdater", nextScene, timer);
 	timerManager->attachComponent(updater);
+
+	sf::SoundBuffer* buffer = AudioManager::getInstance()->getSound("transition");
+	sound->setBuffer(*buffer);
+	sound->play();
 }
 
 void TransitionScene::onUnloadObjects() {
+	sound->stop();
 	AScene::onUnloadObjects();
 }
 
