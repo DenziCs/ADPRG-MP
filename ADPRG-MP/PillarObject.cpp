@@ -12,7 +12,8 @@ PillarObject::PillarObject(string name) : AGameObject(name) {
 
 void PillarObject::initialize() {
 	this->sprite = new sf::Sprite();
-	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("pillar"));
+	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
+	this->sprite->setTextureRect(sf::IntRect(0, 80, 40, 40));
 	// this->transformable = *sprite;
 
 	Renderer* renderer = new Renderer("BlockRenderer");

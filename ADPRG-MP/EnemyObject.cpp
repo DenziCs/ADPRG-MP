@@ -4,6 +4,8 @@
 #include "EnemyBehavior.h"
 #include <iostream>
 #include "Renderer.h"
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 
 EnemyObject::EnemyObject(string name, EnemyType type) : AGameObject(name)
@@ -16,13 +18,18 @@ EnemyObject::EnemyObject(string name, EnemyType type) : AGameObject(name)
 void EnemyObject::initialize()
 {
 	//assign texture
+	int random = rand() % 2;
 	this->sprite = new sf::Sprite();
 	switch (enemyType) {
 	case Walker:
-		this->sprite->setTexture(*TextureManager::getInstance()->getTexture("player"));
+		this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
+		if (random == 1){ this->sprite->setTextureRect(sf::IntRect(70, 0, 30, 30)); }
+		else { this->sprite->setTextureRect(sf::IntRect(0, 40, 30, 30)); }
 		break;
 	case Runner:
-		this->sprite->setTexture(*TextureManager::getInstance()->getTexture("player"));
+		this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
+		if (random == 1) { this->sprite->setTextureRect(sf::IntRect(70, 0, 30, 30)); }
+		else { this->sprite->setTextureRect(sf::IntRect(0, 40, 30, 30)); }
 		break;
 	}
 

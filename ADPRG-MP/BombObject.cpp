@@ -17,7 +17,8 @@ void BombObject::initialize()
 {
 	//assign texture
 	this->sprite = new sf::Sprite();
-	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("pillar"));
+	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
+	this->sprite->setTextureRect(sf::IntRect(0, 0, 40, 40));
 
 	sf::Vector2u textureSize = sprite->getTexture()->getSize();
 	this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
