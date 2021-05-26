@@ -5,7 +5,6 @@
 class AudioManager {
 public:
 	static AudioManager* getInstance();
-	void testFunction();
 	void loadAll();
 	sf::SoundBuffer* getSound(std::string);
 

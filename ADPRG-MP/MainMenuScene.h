@@ -1,5 +1,7 @@
 #pragma once
 #include "AScene.h"
+#include<SFML/Audio.hpp>
+
 class MainMenuScene : public AScene
 {
 public:
@@ -10,4 +12,6 @@ public:
 	void onLoadObjects();
 
 	void onUnloadResources();
+private:
+	sf::Sound* sound;
 };

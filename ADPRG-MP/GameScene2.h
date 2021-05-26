@@ -1,5 +1,7 @@
 #pragma once
 #include "AScene.h"
+#include<SFML/Audio.hpp>
+
 class GameScene2 : public AScene
 {
 public:
@@ -13,4 +15,6 @@ public:
 	void placeSoftBlocks(std::vector<sf::Vector2i>);
 
 	float timer = 200.f;
+private:
+	sf::Sound* sound;
 };

@@ -94,7 +94,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>C:\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>winmm.lib;opengl32.lib;freetype.lib;sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>openal32.lib;flac.lib;vorbisenc.lib;vorbisfile.lib;vorbis.lib;ogg.lib;winmm.lib;opengl32.lib;freetype.lib;sfml-audio-s-d.lib;sfml-graphics-s-d.lib;sfml-window-s-d.lib;sfml-system-s-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -149,6 +149,7 @@
     <ClCompile Include="APoolable.cpp" />
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="AScene.cpp" />
+    <ClCompile Include="AudioManager.cpp" />
     <ClCompile Include="BGObject.cpp" />
     <ClCompile Include="BombExplosion.cpp" />
     <ClCompile Include="BombObject.cpp" />
@@ -204,6 +205,7 @@
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="ARendererFactory.h" />
     <ClInclude Include="AScene.h" />
+    <ClInclude Include="AudioManager.h" />
     <ClInclude Include="BGObject.h" />
     <ClInclude Include="BombExplosion.h" />
     <ClInclude Include="BombObject.h" />
@@ -262,6 +264,16 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Media\Sansation.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Media\Audio\Stage_Theme.wav" />
+    <Media Include="Media\Audio\Title_Theme.wav" />
+    <Media Include="Media\Audio\Transition_Theme.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="openal32.dll" />
+    <None Include="sfml-audio-2.dll" />
+    <None Include="sfml-audio-d-2.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

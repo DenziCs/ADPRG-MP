@@ -171,6 +171,9 @@
     <ClCompile Include="TimerUpdate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="AudioManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AComponent.h">
@@ -335,6 +338,9 @@
     <ClInclude Include="TimerUpdate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="AudioManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Media\Textures\b_4.png">
@@ -361,5 +367,21 @@
   </ItemGroup>
   <ItemGroup>
     <Font Include="Media\Sansation.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Media\Audio\Stage_Theme.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Media\Audio\Title_Theme.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+    <Media Include="Media\Audio\Transition_Theme.wav">
+      <Filter>Resource Files</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="openal32.dll" />
+    <None Include="sfml-audio-2.dll" />
+    <None Include="sfml-audio-d-2.dll" />
   </ItemGroup>
 </Project>

@@ -1,7 +1,6 @@
 #include "GameScene2.h"
 #include "BGObject.h"
 #include "PlayerObject.h"
-#include "AirplaneSupport.h"
 #include "EnemyObject.h"
 #include"PillarObject.h"
 #include "GameObjectPool.h"
@@ -14,10 +13,11 @@
 #include"TimerUpdate.h"
 #include"UIText.h"
 #include "SoftBlockObject.h"
+#include"AudioManager.h"
 
 GameScene2::GameScene2() : AScene("GameScene2")
 {
-
+    this->sound = new sf::Sound();
 }
 
 GameScene2::~GameScene2()
@@ -107,18 +107,22 @@ void GameScene2::onLoadObjects()
     EmptyGameObject* physics = new EmptyGameObject("physics2");
     this->registerObject(physics);
     PhysicsManager::getInstance()->initialize(PhysicsManager::PHYSICS_MANAGER_TAG, physics);
+
+    sf::SoundBuffer* buffer = AudioManager::getInstance()->getSound("stage");
+    sound->setBuffer(*buffer);
+    sound->play();
+    sound->setLoop(true);
 }
 
 void GameScene2::onUnloadObjects()
 {
-    /*
-    GameObjectPool* enemyPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::ENEMY_POOL_TAG);
-    ObjectPoolHolder::getInstance()->unregisterObjectPool(enemyPool);
+    GameObjectPool* bombPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::BOMB_POOL_TAG);
+    ObjectPoolHolder::getInstance()->unregisterObjectPool(bombPool);
 
-    GameObjectPool* bulletPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::BULLET_POOL_TAG);
-    ObjectPoolHolder::getInstance()->unregisterObjectPool(bulletPool);
-    */
+    GameObjectPool* activePool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::EXPLOSION_POOL_TAG);
+    ObjectPoolHolder::getInstance()->unregisterObjectPool(activePool);
 
+    sound->stop();
     AScene::onUnloadObjects();
 }
 

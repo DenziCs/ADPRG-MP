@@ -1,10 +1,10 @@
 #include "Game.h"
 #include "TextureManager.h"
 #include <SFML/Graphics.hpp>
+#include<SFML/Audio.hpp>
 #include "GameObjectManager.h"
 #include "BGObject.h"
 #include "PlayerObject.h"
-#include "AirplaneSupport.h"
 #include "MainMenuScreen.h"
 #include "FontManager.h"
 #include "ApplicationManager.h"
@@ -20,21 +20,21 @@
 #include"GameScene2.h"
 #include"GameScene3.h"
 #include"PhysicsManager.h"
+#include"AudioManager.h"
 
 Game::Game() : 
 mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "Explosion Lad") {
     TextureManager::getInstance()->loadAll();
+    AudioManager::getInstance()->loadAll();
     FontManager::getInstance()->loadAll();
     ApplicationManager::getInstance()->initialize(&this->mWindow);
      
-    //reigster scemes
     SceneManager::getInstance()->registerScene(new MainMenuScene());
     SceneManager::getInstance()->registerScene(new GameScene());
     SceneManager::getInstance()->registerScene(new GameScene2());
     SceneManager::getInstance()->registerScene(new GameScene3());
     SceneManager::getInstance()->registerScene(new TransitionScene());
 
-    //load first scene
     SceneManager::getInstance()->loadScene(SceneManager::MAIN_MENU_SCENE_NAME);
 };
 

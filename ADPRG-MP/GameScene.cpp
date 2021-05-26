@@ -1,7 +1,6 @@
 #include "GameScene.h"
 #include "BGObject.h"
 #include "PlayerObject.h"
-#include "AirplaneSupport.h"
 #include "EnemyObject.h"
 #include"PillarObject.h"
 #include "GameObjectPool.h"
@@ -11,13 +10,14 @@
 #include "HUDScreen.h"
 #include"UIText.h"
 #include"PhysicsManager.h"
+#include"AudioManager.h"
 #include"Game.h"
 #include"TimerUpdate.h"
 #include "SoftBlockObject.h"
 
 GameScene::GameScene() : AScene("GameScene")
 {
-
+    this->sound = new sf::Sound();
 }
 
 GameScene::~GameScene()
@@ -98,6 +98,11 @@ void GameScene::onLoadObjects()
     EmptyGameObject* physics = new EmptyGameObject("physics");
     this->registerObject(physics);
     PhysicsManager::getInstance()->initialize(PhysicsManager::PHYSICS_MANAGER_TAG, physics);
+
+    sf::SoundBuffer* buffer = AudioManager::getInstance()->getSound("stage");
+    sound->setBuffer(*buffer);
+    sound->play();
+    sound->setLoop(true);
 }
 
 void GameScene::onUnloadObjects()
@@ -108,6 +113,7 @@ void GameScene::onUnloadObjects()
     GameObjectPool* activePool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::EXPLOSION_POOL_TAG);
     ObjectPoolHolder::getInstance()->unregisterObjectPool(activePool);
 
+    sound->stop();
 	AScene::onUnloadObjects();
 }
 
