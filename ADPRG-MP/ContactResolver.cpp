@@ -18,7 +18,8 @@ void ContactResolver::resolve() {
 			ApplicationManager::getInstance()->applicationQuit();
 			break;
 		}
-	break;
+
+		break;
 	case AGameObject::Enemy:
 		switch (objects[1]->getObjectType()) {
 		case AGameObject::Enemy:
@@ -27,6 +28,17 @@ void ContactResolver::resolve() {
 			GameObjectManager::getInstance()->deleteObject(objects[0]);
 			break;
 		}
-	break;
+
+		break;
+	case AGameObject::Softblock:
+		switch (objects[1]->getObjectType()) {
+		case AGameObject::Enemy:
+			break;
+		case AGameObject::ActiveBomb:
+			GameObjectManager::getInstance()->deleteObject(objects[0]);
+			break;
+		}
+
+		break;
 	}
 }

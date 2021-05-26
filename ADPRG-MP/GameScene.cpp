@@ -9,8 +9,10 @@
 #include "EmptyGameObject.h"
 #include "EnemySwarmHandler.h"
 #include "HUDScreen.h"
+#include"UIText.h"
 #include"PhysicsManager.h"
 #include"Game.h"
+#include"TimerUpdate.h"
 
 GameScene::GameScene() : AScene("GameScene")
 {
@@ -49,6 +51,21 @@ void GameScene::onLoadObjects()
     HUDScreen* hudScreen = new HUDScreen("HUDScreen");
     this->registerObject(hudScreen);
 
+    UIText* timerText1 = new UIText("Timer");
+    this->registerObject(timerText1);
+    timerText1->setPosition(50, 40);
+    timerText1->setSize(30);
+    timerText1->setText("TIME");
+
+    UIText* timerText2 = new UIText("Timer");
+    this->registerObject(timerText2);
+    timerText2->setPosition(150, 40);
+    timerText2->setSize(30);
+    timerText2->setText(to_string(int(this->timer)));
+    
+    TimerUpdate* updater = new TimerUpdate("timerUpdater", timer);
+    timerText2->attachComponent(updater);
+
     EmptyGameObject* physics = new EmptyGameObject("physics");
     this->registerObject(physics);
     PhysicsManager::getInstance()->initialize(PhysicsManager::PHYSICS_MANAGER_TAG, physics);
@@ -56,13 +73,11 @@ void GameScene::onLoadObjects()
 
 void GameScene::onUnloadObjects()
 {
-    /*
-	GameObjectPool* enemyPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::ENEMY_POOL_TAG);
-	ObjectPoolHolder::getInstance()->unregisterObjectPool(enemyPool);
+	GameObjectPool* bombPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::BOMB_POOL_TAG);
+	ObjectPoolHolder::getInstance()->unregisterObjectPool(bombPool);
 
-    GameObjectPool* bulletPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::BULLET_POOL_TAG);
-    ObjectPoolHolder::getInstance()->unregisterObjectPool(bulletPool);
-    */
+    GameObjectPool* activePool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::EXPLOSION_POOL_TAG);
+    ObjectPoolHolder::getInstance()->unregisterObjectPool(activePool);
 
 	AScene::onUnloadObjects();
 }

@@ -9,6 +9,6 @@ public:
 	void perform();
 
 private:
-	float timer = 10.f;
+	float timer = 200.f;
 	bool timeUp = false;
 };

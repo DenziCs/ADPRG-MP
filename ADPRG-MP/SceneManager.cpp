@@ -38,8 +38,6 @@ void SceneManager::loadScene(string name)
 {
 	this->isLoading = true;
 	this->toLoadSceneName = name;
-	//put a loading screen!
-
 }
 
 void SceneManager::unloadScene()

@@ -10,4 +10,6 @@ public:
 	void onLoadObjects();
 	void onUnloadObjects();
 	void onUnloadResources();
+
+	float timer = 200.f;
 };
