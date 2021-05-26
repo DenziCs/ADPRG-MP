@@ -1,10 +1,10 @@
 #pragma once
 #include "AScene.h"
-class GameScene : public AScene
+class GameScene2 : public AScene
 {
 public:
-	GameScene();
-	~GameScene();
+	GameScene2();
+	~GameScene2();
 
 	void onLoadResources();
 	void onLoadObjects();

@@ -1,4 +1,4 @@
-#include "GameScene.h"
+#include "GameScene3.h"
 #include "BGObject.h"
 #include "PlayerObject.h"
 #include "AirplaneSupport.h"
@@ -11,22 +11,21 @@
 #include "HUDScreen.h"
 #include"PhysicsManager.h"
 #include"Game.h"
-#include "SoftBlockObject.h"
 
-GameScene::GameScene() : AScene("GameScene")
+GameScene3::GameScene3() : AScene("GameScene3")
 {
 
 }
 
-GameScene::~GameScene()
+GameScene3::~GameScene3()
 {
 }
 
-void GameScene::onLoadResources()
+void GameScene3::onLoadResources()
 {
 }
 
-void GameScene::onLoadObjects()
+void GameScene3::onLoadObjects()
 {
     BGObject* bgObject = new BGObject("BGObject");
     this->registerObject(bgObject);
@@ -36,14 +35,6 @@ void GameScene::onLoadObjects()
         this->registerObject(pillar);
         pillar->setPosition(80 * ((i % 8) + 1), 80 * ((i / 8) + 2));
     }
-
-    std::vector<sf::Vector2i> blockPos;
-    blockPos.push_back(sf::Vector2i(3, 6));
-    blockPos.push_back(sf::Vector2i(2, 6));
-    blockPos.push_back(sf::Vector2i(4, 6));
-    blockPos.push_back(sf::Vector2i(5, 8));
-
-    placeSoftBlocks(blockPos);
 
     PlayerObject* planeObject = new PlayerObject("PlaneObject");
     this->registerObject(planeObject);
@@ -63,28 +54,20 @@ void GameScene::onLoadObjects()
     PhysicsManager::getInstance()->initialize(PhysicsManager::PHYSICS_MANAGER_TAG, physics);
 }
 
-void GameScene::onUnloadObjects()
+void GameScene3::onUnloadObjects()
 {
     /*
-	GameObjectPool* enemyPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::ENEMY_POOL_TAG);
-	ObjectPoolHolder::getInstance()->unregisterObjectPool(enemyPool);
+    GameObjectPool* enemyPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::ENEMY_POOL_TAG);
+    ObjectPoolHolder::getInstance()->unregisterObjectPool(enemyPool);
 
     GameObjectPool* bulletPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::BULLET_POOL_TAG);
     ObjectPoolHolder::getInstance()->unregisterObjectPool(bulletPool);
     */
 
-	AScene::onUnloadObjects();
+    AScene::onUnloadObjects();
 }
 
 
-void GameScene::onUnloadResources()
+void GameScene3::onUnloadResources()
 {
-}
-
-void GameScene::placeSoftBlocks(std::vector<sf::Vector2i> blockPos) {
-    for (int i = 0; i < blockPos.size(); i++) {
-        SoftBlockObject* block = new SoftBlockObject("SoftBlock");
-        this->registerObject(block);
-        block->setPosition(Game::TILE_SIZE * blockPos[i].x, Game::TILE_SIZE * blockPos[i].y);
-    }
 }

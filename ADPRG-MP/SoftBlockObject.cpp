@@ -4,6 +4,7 @@
 #include "EnemyBehavior.h"
 #include <iostream>
 #include "Renderer.h"
+#include "Collider.h"
 
 SoftBlockObject::SoftBlockObject(string name) : APoolable(name)
 {
@@ -26,6 +27,9 @@ void SoftBlockObject::initialize()
 	Renderer* renderer = new Renderer("BlockRenderer");
 	renderer->assignDrawable(this->sprite);
 	this->attachComponent(renderer);
+
+	Collider* collider = new Collider("SoftBlockCollider");
+	this->attachComponent(collider);
 }
 
 sf::FloatRect SoftBlockObject::getGlobalBounds() {

@@ -167,6 +167,7 @@
     <ClCompile Include="GameObjectPool.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="GameScene2.cpp" />
+    <ClCompile Include="GameScene3.cpp" />
     <ClCompile Include="GenericInputController.cpp" />
     <ClCompile Include="HUDScreen.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -220,6 +221,7 @@
     <ClInclude Include="GameObjectPool.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="GameScene2.h" />
+    <ClInclude Include="GameScene3.h" />
     <ClInclude Include="GenericInputController.h" />
     <ClInclude Include="HUDScreen.h" />
     <ClInclude Include="MainMenuScene.h" />
