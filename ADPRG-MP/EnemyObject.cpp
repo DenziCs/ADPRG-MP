@@ -24,13 +24,11 @@ void EnemyObject::initialize()
 	switch (enemyType) {
 	case Walker:
 		this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
-		if (random == 1){ textureSize = sf::IntRect(70, 0, 30, 30); }
-		else { textureSize = sf::IntRect(0, 40, 30, 30); }
+		textureSize = sf::IntRect(70, 0, 30, 30);
 		break;
 	case Runner:
 		this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
-		if (random == 1) { textureSize = sf::IntRect(70, 0, 30, 30); }
-		else { textureSize = sf::IntRect(0, 40, 30, 30); }
+		textureSize = sf::IntRect(0, 40, 30, 30);
 		break;
 	}
 

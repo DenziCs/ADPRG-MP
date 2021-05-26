@@ -15,9 +15,12 @@ void SoftBlockObject::initialize()
 {
 	//assign texture
 	this->sprite = new sf::Sprite();
-	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("avenger"));
-	sf::Vector2u textureSize = sprite->getTexture()->getSize();
-	this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
+	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
+	sf::IntRect textureSize(40, 80, 40, 40);
+	this->sprite->setTextureRect(textureSize);
+
+	//sf::Vector2u textureSize = sprite->getTexture()->getSize();
+	this->sprite->setOrigin(textureSize.width / 2, textureSize.height / 2);
 	this->transformable = *sprite;
 
 	Renderer* renderer = new Renderer("BlockRenderer");
