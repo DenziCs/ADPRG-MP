@@ -3,28 +3,12 @@
 #include "CollisionListener.h"
 #include "AGameObject.h"
 #include"PhysicsManager.h"
+#include"GameObjectManager.h"
+#include<vector>
 
 class Collider : public AComponent {
 
 public:
-	Collider(string name) : AComponent(name, Physics) {}
-
-	void setChecked(bool flag);
-	bool isChecked();
-
-	bool willCollide(Collider* another);
-	bool alreadyCollided();
-	void setAlreadyCollided(bool flag);
-
-	sf::FloatRect getGlobalBounds();
-	void setLocalBounds(sf::FloatRect localBounds);
-	void collisionEnter(AGameObject* gameObjects);
-	void collisionExit(AGameObject* gameObjects);
-
+	Collider(string name) : AComponent(name, Script) {}
 	void perform();
-private:
-	bool collided = false;
-	bool checked = false;
-	sf::FloatRect localBounds;
-	CollisionListener* listener;
 };

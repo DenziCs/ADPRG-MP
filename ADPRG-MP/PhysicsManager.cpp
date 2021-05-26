@@ -22,20 +22,22 @@ void PhysicsManager::addContact(ContactResolver* resolver) {
 	collisionList.push_back(resolver);
 }
 
+/*
 void PhysicsManager::getContacts() {
 	PlayerObject* player = (PlayerObject*)GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Player)[0];
 	vector<AGameObject*> toCheck = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Enemy);
 	int size = toCheck.size();
 	for (int i = 0; i < size; i++) {
 		if (player->getGlobalBounds().intersects(toCheck[i]->getGlobalBounds())) {
-			ContactResolver* contact = new ContactResolver(player, toCheck[i], ContactResolver::PlayerEnemy);
+			ContactResolver* contact = new ContactResolver(player, toCheck[i]);
 			addContact(contact);
 		}
 	}
 }
+*/
 
 void PhysicsManager::perform() {
-	this->getContacts();
+	// this->getContacts();
 	iterator.resolveContacts(collisionList);
 	collisionList.clear();
 }

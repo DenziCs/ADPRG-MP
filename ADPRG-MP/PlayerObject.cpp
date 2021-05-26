@@ -4,6 +4,7 @@
 #include "PlayerInputController.h"
 #include "PlayerMovement.h"
 #include"PlayerAttack.h"
+#include"Collider.h"
 #include "TextureManager.h"
 #include "Renderer.h"
 #include "SpriteRenderer.h"
@@ -37,6 +38,9 @@ void PlayerObject::initialize() {
     Renderer* renderer = new Renderer("PlayerRenderer");
     renderer->assignDrawable(this->sprite);
     this->attachComponent(renderer);
+
+    Collider* collider = new Collider("PlayerCollider");
+    this->attachComponent(collider);
 }
 
 sf::FloatRect PlayerObject::getGlobalBounds() {

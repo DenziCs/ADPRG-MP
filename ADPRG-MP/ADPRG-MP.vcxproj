@@ -152,6 +152,7 @@
     <ClCompile Include="BGObject.cpp" />
     <ClCompile Include="BombExplosion.cpp" />
     <ClCompile Include="BombObject.cpp" />
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="ContactResolver.cpp" />
     <ClCompile Include="ContactResolverIterator.cpp" />
     <ClCompile Include="DebugRendererFactory.cpp" />
@@ -202,6 +203,7 @@
     <ClInclude Include="BombExplosion.h" />
     <ClInclude Include="BombObject.h" />
     <ClInclude Include="ButtonListener.h" />
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionListener.h" />
     <ClInclude Include="ContactResolver.h" />
     <ClInclude Include="ContactResolverIterator.h" />

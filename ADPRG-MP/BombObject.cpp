@@ -20,8 +20,6 @@ void BombObject::initialize()
 	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
 	sf::IntRect textureSize(0, 0, 40, 40);
 	this->sprite->setTextureRect(textureSize);
-
-	//sf::Vector2u textureSize = sprite->getTexture()->getSize();
 	this->sprite->setOrigin(textureSize.width / 2, textureSize.height / 2);
 
 	BombExplosion* exploder = new BombExplosion("Exploder");

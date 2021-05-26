@@ -25,15 +25,13 @@ public:
 	static PhysicsManager* getInstance();
 	~PhysicsManager();
 
+	void addContact(ContactResolver* object);
 	void perform();
 private:
 	PhysicsManager(string name) : AComponent(name, Script) { iterator.max_iterations = 25; };
 	PhysicsManager(PhysicsManager const&) : AComponent(name, Script) {};             // copy constructor is private
 	PhysicsManager& operator=(PhysicsManager const&) {};  // assignment operator is private
 	static PhysicsManager* sharedInstance;
-
-	void addContact(ContactResolver* object);
-	void getContacts();
 
 	CollisionList collisionList;
 	ContactResolverIterator iterator;
