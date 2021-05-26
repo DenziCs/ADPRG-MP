@@ -42,6 +42,24 @@ bool EnemyBehavior::hasCollided() {
 	}
 
 	toSearch.clear();
+	toSearch = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Softblock);
+	for (int i = 0; i < toSearch.size(); i++) {
+		if (bounds.intersects(toSearch[i]->getGlobalBounds())) {
+			toSearch.clear();
+			return true;
+		}
+	}
+
+	toSearch.clear();
+	toSearch = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Bomb);
+	for (int i = 0; i < toSearch.size(); i++) {
+		if (bounds.intersects(toSearch[i]->getGlobalBounds()) && toSearch[i]->isEnabled()) {
+			toSearch.clear();
+			return true;
+		}
+	}
+
+	toSearch.clear();
 	return false;
 }
 

@@ -2,6 +2,7 @@
 #include "TextureManager.h"
 #include "Game.h"
 #include "EnemyBehavior.h"
+#include"Collider.h"
 #include <iostream>
 #include "Renderer.h"
 #include <stdlib.h>     /* srand, rand */
@@ -51,6 +52,9 @@ void EnemyObject::initialize()
 
 	EnemyBehavior* behavior = new EnemyBehavior("EnemyBehavior", type, runner);
 	this->attachComponent(behavior);
+
+	Collider* collider = new Collider("EnemyCollider");
+	this->attachComponent(collider);
 }
 
 sf::FloatRect EnemyObject::getGlobalBounds() {

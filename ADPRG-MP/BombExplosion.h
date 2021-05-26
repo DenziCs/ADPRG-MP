@@ -14,8 +14,15 @@ public:
 	void perform();
 	void reset();
 private:
+	enum Direction {
+		Up = 0,
+		Right = 1,
+		Down = 2,
+		Left = 3
+	};
+
 	void explode();
-	bool hasCollided(ActiveBombObject* explosion);
+	bool hasCollided(ActiveBombObject* explosion, Direction direction);
 
 	float timer = 0.8f;
 	int range = 1;

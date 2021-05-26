@@ -16,7 +16,7 @@ void Collider::perform() {
 	toCheck = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::ActiveBomb);
 	size = toCheck.size();
 	for (int i = 0; i < size; i++) {
-		if (bounds.intersects(toCheck[i]->getGlobalBounds())) {
+		if (bounds.intersects(toCheck[i]->getGlobalBounds()) && toCheck[i]->isEnabled()) {
 			ContactResolver* contact = new ContactResolver(this->getOwner(), toCheck[i]);
 			PhysicsManager::getInstance()->addContact(contact);
 		}

@@ -37,6 +37,15 @@ bool PlayerMovement::hasCollided(Direction direction) {
 	}
 
 	toSearch.clear();
+	toSearch = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Softblock);
+	for (int i = 0; i < toSearch.size(); i++) {
+		if (bounds.intersects(toSearch[i]->getGlobalBounds())) {
+			toSearch.clear();
+			return true;
+		}
+	}
+
+	toSearch.clear();
 	return false;
 }
 
