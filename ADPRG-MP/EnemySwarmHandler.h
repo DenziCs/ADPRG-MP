@@ -9,6 +9,7 @@ public:
 	void perform();
 
 private:
+	int currentLevel;
 	float timer = 200.f;
 	bool timeUp = false;
 };

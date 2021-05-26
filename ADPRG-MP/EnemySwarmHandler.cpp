@@ -3,9 +3,12 @@
 #include "ObjectPoolHolder.h"
 #include "EnemyObject.h"
 #include"Game.h"
+#include"SceneManager.h"
 
 EnemySwarmHandler::EnemySwarmHandler(int level, string name) : AComponent(name, Script)
 {
+	this->currentLevel = level;
+
 	int enemyCount = 5;
 	switch (level) {
 	case 1:
@@ -98,5 +101,21 @@ void EnemySwarmHandler::perform()
 		}
 
 		timeUp = true;
+	}
+
+	vector<AGameObject*> enemies = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Enemy);
+	if (enemies.size() == 0) {
+		switch (this->currentLevel) {
+		case 1:
+			SceneManager::getInstance()->specifyNextScene(SceneManager::GAME_SCENE_2_NAME);
+			break;
+		case 2:
+			SceneManager::getInstance()->specifyNextScene(SceneManager::GAME_SCENE_3_NAME);
+			break;
+		case 3:
+			SceneManager::getInstance()->specifyNextScene(SceneManager::MAIN_MENU_SCENE_NAME);
+			break;
+		}
+		SceneManager::getInstance()->loadScene(SceneManager::TRANSITION_SCENE_NAME);
 	}
 }

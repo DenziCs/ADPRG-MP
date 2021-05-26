@@ -17,6 +17,8 @@
 #include"TransitionScene.h"
 #include "SceneManager.h"
 #include "GameScene.h"
+#include"GameScene2.h"
+#include"GameScene3.h"
 #include"PhysicsManager.h"
 
 Game::Game() : 
@@ -28,6 +30,8 @@ mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "Explosion Lad")
     //reigster scemes
     SceneManager::getInstance()->registerScene(new MainMenuScene());
     SceneManager::getInstance()->registerScene(new GameScene());
+    SceneManager::getInstance()->registerScene(new GameScene2());
+    SceneManager::getInstance()->registerScene(new GameScene3());
     SceneManager::getInstance()->registerScene(new TransitionScene());
 
     //load first scene
