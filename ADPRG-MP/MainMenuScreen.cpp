@@ -78,5 +78,3 @@ void MainMenuScreen::onButtonReleased(UIButton* button)
 		GameObjectManager::getInstance()->addObject(quitScreen);
 	}
 }
-
-

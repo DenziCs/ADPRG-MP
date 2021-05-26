@@ -188,6 +188,7 @@
     <ClCompile Include="SoftBlockObject.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TimerUpdate.cpp" />
     <ClCompile Include="UIButton.cpp" />
     <ClCompile Include="UIButtonInputController.cpp" />
     <ClCompile Include="UIText.cpp" />
@@ -241,6 +242,7 @@
     <ClInclude Include="SoftBlockObject.h" />
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TimerUpdate.h" />
     <ClInclude Include="UIButton.h" />
     <ClInclude Include="UIButtonInputController.h" />
     <ClInclude Include="UIText.h" />

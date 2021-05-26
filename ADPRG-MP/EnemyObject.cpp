@@ -1,7 +1,6 @@
 #include "EnemyObject.h"
 #include "TextureManager.h"
 #include "Game.h"
-#include "EnemyBehavior.h"
 #include"Collider.h"
 #include <iostream>
 #include "Renderer.h"

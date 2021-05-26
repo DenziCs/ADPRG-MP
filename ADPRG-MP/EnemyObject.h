@@ -1,6 +1,7 @@
 #pragma once
 #include "AGameObject.h"
 #include"PhysicsManager.h"
+#include "EnemyBehavior.h"
 
 class EnemyObject : public AGameObject
 {
