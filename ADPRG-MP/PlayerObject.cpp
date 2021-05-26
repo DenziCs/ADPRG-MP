@@ -19,9 +19,11 @@ PlayerObject::PlayerObject(string name) : AGameObject(name) {
 void PlayerObject::initialize() {
     this->sprite = new sf::Sprite();
     this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
-    this->sprite->setTextureRect(sf::IntRect(40, 0, 30, 30));
-    sf::Vector2u textureSize = this->sprite->getTexture()->getSize();
-    this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
+    sf::IntRect textureSize(40, 0, 30, 30);
+    this->sprite->setTextureRect(textureSize);
+
+    //sf::Vector2u textureSize = sprite->getTexture()->getSize();
+    this->sprite->setOrigin(textureSize.width / 2, textureSize.height / 2);
 
     PlayerInputController* inputController = new PlayerInputController("MyPlayerInput");
     this->attachComponent(inputController);
