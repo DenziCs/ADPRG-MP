@@ -7,9 +7,6 @@
 #include"Collider.h"
 #include "TextureManager.h"
 #include "Renderer.h"
-#include "SpriteRenderer.h"
-#include "RendererFactory.h"
-#include "DebugRendererFactory.h"
 #include<iostream>
 
 PlayerObject::PlayerObject(string name) : AGameObject(name) {

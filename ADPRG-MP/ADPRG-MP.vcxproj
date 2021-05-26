@@ -156,7 +156,6 @@
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="ContactResolver.cpp" />
     <ClCompile Include="ContactResolverIterator.cpp" />
-    <ClCompile Include="DebugRendererFactory.cpp" />
     <ClCompile Include="EmptyGameObject.cpp" />
     <ClCompile Include="EnemyBehavior.cpp" />
     <ClCompile Include="EnemyObject.cpp" />
@@ -184,7 +183,6 @@
     <ClCompile Include="QuitScreen.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="RendererFactory.cpp" />
-    <ClCompile Include="SamplePopupScreen.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="SoftBlockObject.cpp" />
     <ClCompile Include="SpriteRenderer.cpp" />
@@ -211,10 +209,8 @@
     <ClInclude Include="BombObject.h" />
     <ClInclude Include="ButtonListener.h" />
     <ClInclude Include="Collider.h" />
-    <ClInclude Include="CollisionListener.h" />
     <ClInclude Include="ContactResolver.h" />
     <ClInclude Include="ContactResolverIterator.h" />
-    <ClInclude Include="DebugRendererFactory.h" />
     <ClInclude Include="EmptyGameObject.h" />
     <ClInclude Include="EnemyBehavior.h" />
     <ClInclude Include="EnemyObject.h" />
@@ -241,7 +237,6 @@
     <ClInclude Include="QuitScreen.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="RendererFactory.h" />
-    <ClInclude Include="SamplePopupScreen.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="SoftBlockObject.h" />
     <ClInclude Include="SpriteRenderer.h" />
