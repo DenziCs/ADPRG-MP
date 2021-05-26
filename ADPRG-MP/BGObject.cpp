@@ -16,7 +16,7 @@ void BGObject::initialize()
 
 	//assign texture
 	sf::Sprite* sprite = new sf::Sprite();
-	sprite->setTexture(*TextureManager::getInstance()->getTexture("desert_bg"));
+	sprite->setTexture(*TextureManager::getInstance()->getTexture("stageBG"));
 	sf::Vector2u textureSize = sprite->getTexture()->getSize();
 	//make BG height x k to emulate repeating BG.
 	sprite->setTextureRect(sf::IntRect(0, 0, Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT * 8));

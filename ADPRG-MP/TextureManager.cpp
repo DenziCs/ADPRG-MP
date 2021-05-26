@@ -14,10 +14,12 @@ TextureManager* TextureManager::getInstance() {
 
 void TextureManager::loadAll() {
 
-	loadTexture("desert_bg", "Media/Textures/Desert.png");
+	loadTexture("stageBG", "Media/Textures/stageBG.png");
 	sf::Texture* bgTex;
-	bgTex = getTexture("desert_bg");
+	bgTex = getTexture("stageBG");
 	bgTex->setRepeated(true);
+
+	loadTexture("sheet", "Media/Textures/spriteSheet.png");
 
 	loadTexture("eagle", "Media/Textures/Eagle.png");
 	loadTexture("raptor", "Media/Textures/Raptor.png");
@@ -29,7 +31,7 @@ void TextureManager::loadAll() {
 	loadTexture("title_bg", "Media/Textures/TitleScreenBG.png");
 	loadTexture("bullet", "Media/Textures/Bullet.png");
 	loadTexture("pillar", "Media/Textures/block.png");
-	loadTexture("player", "Media/Textures/player.png");
+	//loadTexture("player", "Media/Textures/player.png");
 }
 
 void TextureManager::loadTexture(std::string key, std::string path) {

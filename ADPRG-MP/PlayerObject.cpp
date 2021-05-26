@@ -18,7 +18,8 @@ PlayerObject::PlayerObject(string name) : AGameObject(name) {
 
 void PlayerObject::initialize() {
     this->sprite = new sf::Sprite();
-    this->sprite->setTexture(*TextureManager::getInstance()->getTexture("player"));
+    this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
+    this->sprite->setTextureRect(sf::IntRect(40, 0, 30, 30));
     sf::Vector2u textureSize = this->sprite->getTexture()->getSize();
     this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
 
