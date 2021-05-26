@@ -11,6 +11,8 @@ public:
 	//scene names
 	static string MAIN_MENU_SCENE_NAME;
 	static string GAME_SCENE_NAME;
+	static string GAME_SCENE_2_NAME;
+	static string GAME_SCENE_3_NAME;
 	static string TRANSITION_SCENE_NAME;
 
 	static SceneManager* getInstance();

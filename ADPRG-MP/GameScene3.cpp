@@ -84,7 +84,7 @@ void GameScene3::onLoadObjects()
 
     srand(time(NULL));
     EmptyGameObject* enemiesManager = new EmptyGameObject("EnemiesManager");
-    EnemySwarmHandler* swarmHandler = new EnemySwarmHandler(1, "SwarmHandler");
+    EnemySwarmHandler* swarmHandler = new EnemySwarmHandler(3, "SwarmHandler");
     enemiesManager->attachComponent(swarmHandler);
     this->registerObject(enemiesManager);
 

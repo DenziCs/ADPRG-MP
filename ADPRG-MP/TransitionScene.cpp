@@ -10,6 +10,8 @@ void TransitionScene::onLoadObjects() {
 	
 	if (this->nextScene == SceneManager::MAIN_MENU_SCENE_NAME) text->setText("GAME OVER");
 	if (this->nextScene == SceneManager::GAME_SCENE_NAME) text->setText("STAGE 1");
+	if (this->nextScene == SceneManager::GAME_SCENE_2_NAME) text->setText("STAGE 2");
+	if (this->nextScene == SceneManager::GAME_SCENE_3_NAME) text->setText("STAGE 3");
 
 	EmptyGameObject* timerManager = new EmptyGameObject("timerManager");
 	this->registerObject(timerManager);

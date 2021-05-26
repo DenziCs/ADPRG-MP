@@ -29,10 +29,8 @@ void PlayerAttack::perform() {
 			this->ticks = 0.0f;
 			BombObject* bomb = (BombObject*)bombPool->requestPoolable();
 			sf::Vector2f spawnPoint = this->getOwner()->getTransformable()->getPosition();
-			cout << spawnPoint.x << " " << spawnPoint.y << endl;
 			spawnPoint.x = (int(spawnPoint.x / Game::TILE_SIZE)) * Game::TILE_SIZE + (Game::TILE_SIZE / 2);
 			spawnPoint.y = (int(spawnPoint.y / Game::TILE_SIZE)) * Game::TILE_SIZE + (Game::TILE_SIZE / 2);
-			cout << spawnPoint.x << " " << spawnPoint.y << endl;
 			bomb->setPosition(spawnPoint.x, spawnPoint.y);
 		}
 	}

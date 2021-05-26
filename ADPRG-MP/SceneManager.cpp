@@ -4,6 +4,8 @@
 
 string SceneManager::MAIN_MENU_SCENE_NAME = "MainMenuScene";
 string SceneManager::GAME_SCENE_NAME = "GameScene";
+string SceneManager::GAME_SCENE_2_NAME = "GameScene2";
+string SceneManager::GAME_SCENE_3_NAME = "GameScene3";
 string SceneManager::TRANSITION_SCENE_NAME = "TransitionScene";
 
 SceneManager* SceneManager::sharedInstance = NULL;
