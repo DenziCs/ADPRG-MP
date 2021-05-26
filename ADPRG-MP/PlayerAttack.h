@@ -17,6 +17,6 @@ public:
 private:
 	void setUpPools();
 
-	const float DROP_INTERVAL = 0.8f;
+	const float DROP_INTERVAL = 0.1f;
 	float ticks = 0.0f;
 };
