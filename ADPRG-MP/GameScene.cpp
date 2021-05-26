@@ -63,6 +63,7 @@ void GameScene::onLoadObjects()
     timerText2->setSize(30);
     timerText2->setText(to_string(int(this->timer)));
     
+    // Added here for access to timer, as well as to avoid circular dependency.
     TimerUpdate* updater = new TimerUpdate("timerUpdater", timer);
     timerText2->attachComponent(updater);
 
