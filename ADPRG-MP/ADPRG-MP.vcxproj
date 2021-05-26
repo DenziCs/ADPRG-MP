@@ -252,30 +252,16 @@
     <ClInclude Include="UIText.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Media\Textures\Avenger.png" />
     <Image Include="Media\Textures\bar_1.png" />
-    <Image Include="Media\Textures\bar_2.png" />
-    <Image Include="Media\Textures\block.png" />
-    <Image Include="Media\Textures\Bullet.png" />
-    <Image Include="Media\Textures\b_1.png" />
-    <Image Include="Media\Textures\b_2.png" />
-    <Image Include="Media\Textures\b_3.png" />
     <Image Include="Media\Textures\b_4.png" />
     <Image Include="Media\Textures\b_5.png" />
-    <Image Include="Media\Textures\b_6.png" />
-    <Image Include="Media\Textures\b_7.png" />
-    <Image Include="Media\Textures\b_8.png" />
-    <Image Include="Media\Textures\Desert.png" />
-    <Image Include="Media\Textures\Eagle.png" />
     <Image Include="Media\Textures\f.png" />
-    <Image Include="Media\Textures\field.png" />
-    <Image Include="Media\Textures\l1.png" />
-    <Image Include="Media\Textures\l2.png" />
-    <Image Include="Media\Textures\player.png" />
-    <Image Include="Media\Textures\Raptor.png" />
-    <Image Include="Media\Textures\s1.png" />
-    <Image Include="Media\Textures\s2.png" />
+    <Image Include="Media\Textures\spriteSheet.png" />
+    <Image Include="Media\Textures\stageBG.png" />
     <Image Include="Media\Textures\TitleScreenBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="Media\Sansation.ttf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
