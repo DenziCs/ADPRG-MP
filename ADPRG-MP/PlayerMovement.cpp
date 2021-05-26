@@ -15,7 +15,6 @@ PlayerMovement::~PlayerMovement()
 }
 
 bool PlayerMovement::hasCollided(Direction direction) {
-	sf::Transformable* playerTransformable = this->getOwner()->getTransformable();
 	sf::FloatRect bounds = this->getOwner()->getGlobalBounds();
 
 	switch (direction) {

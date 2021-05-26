@@ -16,7 +16,7 @@ public:
 
 private:
 	float speed;
-	float timer = 5.f;
+	// float timer = 5.f;
 	EnemyMovementType movementType;
 	bool direction = true;
 		// denotes direction of movement. true = positive direction, false = negative direction

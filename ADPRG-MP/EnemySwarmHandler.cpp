@@ -2,6 +2,7 @@
 #include "GameObjectManager.h"
 #include "ObjectPoolHolder.h"
 #include "EnemyObject.h"
+#include"Game.h"
 
 EnemySwarmHandler::EnemySwarmHandler(int level, string name) : AComponent(name, Script)
 {
@@ -22,28 +23,28 @@ EnemySwarmHandler::EnemySwarmHandler(int level, string name) : AComponent(name, 
 		GameObjectManager::getInstance()->addObject(enemy);
 		switch (i) {
 		case 0:
-			enemy->setPosition(50, 100);
+			enemy->setPosition(Game::TILE_SIZE * 4.5, Game::TILE_SIZE * 3.5);
 			break;
 		case 1:
-			enemy->setPosition(80, 200);
+			enemy->setPosition(Game::TILE_SIZE * 10.5, Game::TILE_SIZE * 5.5);
 			break;
 		case 2:
-			enemy->setPosition(200, 80);
+			enemy->setPosition(Game::TILE_SIZE * 12.5, Game::TILE_SIZE * 7.5);
 			break;
 		case 3:
-			enemy->setPosition(100, 50);
+			enemy->setPosition(Game::TILE_SIZE * 6.5, Game::TILE_SIZE * 9.5);
 			break;
 		case 4:
-			enemy->setPosition(175, 300);
+			enemy->setPosition(Game::TILE_SIZE * 3.5, Game::TILE_SIZE * 4.5);
 			break;
 		case 5:
-			enemy->setPosition(300, 175);
+			enemy->setPosition(Game::TILE_SIZE * 9.5, Game::TILE_SIZE * 6.5);
 			break;
 		case 6:
-			enemy->setPosition(190, 100);
+			enemy->setPosition(Game::TILE_SIZE * 5.5, Game::TILE_SIZE * 8.5);
 			break;
 		case 7:
-			enemy->setPosition(80, 40);
+			enemy->setPosition(Game::TILE_SIZE * 7.5, Game::TILE_SIZE * 10.5);
 			break;
 		}
 	}
@@ -70,28 +71,28 @@ void EnemySwarmHandler::perform()
 			GameObjectManager::getInstance()->addObject(enemy);
 			switch (i) {
 			case 0:
-				enemy->setPosition(50, 100);
+				enemy->setPosition(Game::TILE_SIZE * 4.5, Game::TILE_SIZE * 3.5);
 				break;
 			case 1:
-				enemy->setPosition(80, 200);
+				enemy->setPosition(Game::TILE_SIZE * 10.5, Game::TILE_SIZE * 5.5);
 				break;
 			case 2:
-				enemy->setPosition(200, 80);
+				enemy->setPosition(Game::TILE_SIZE * 12.5, Game::TILE_SIZE * 7.5);
 				break;
 			case 3:
-				enemy->setPosition(100, 50);
+				enemy->setPosition(Game::TILE_SIZE * 6.5, Game::TILE_SIZE * 9.5);
 				break;
 			case 4:
-				enemy->setPosition(175, 300);
+				enemy->setPosition(Game::TILE_SIZE * 3.5, Game::TILE_SIZE * 4.5);
 				break;
 			case 5:
-				enemy->setPosition(300, 175);
+				enemy->setPosition(Game::TILE_SIZE * 9.5, Game::TILE_SIZE * 6.5);
 				break;
 			case 6:
-				enemy->setPosition(190, 100);
+				enemy->setPosition(Game::TILE_SIZE * 5.5, Game::TILE_SIZE * 8.5);
 				break;
 			case 7:
-				enemy->setPosition(80, 40);
+				enemy->setPosition(Game::TILE_SIZE * 7.5, Game::TILE_SIZE * 10.5);
 				break;
 			}
 		}
