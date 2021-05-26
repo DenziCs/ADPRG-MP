@@ -13,6 +13,7 @@
 #include"PhysicsManager.h"
 #include"Game.h"
 #include"TimerUpdate.h"
+#include "SoftBlockObject.h"
 
 GameScene::GameScene() : AScene("GameScene")
 {
@@ -43,6 +44,25 @@ void GameScene::onLoadObjects()
     blockPos.push_back(sf::Vector2i(2, 6));
     blockPos.push_back(sf::Vector2i(4, 6));
     blockPos.push_back(sf::Vector2i(5, 8));
+    blockPos.push_back(sf::Vector2i(3, 8));
+    blockPos.push_back(sf::Vector2i(4, 7));
+    blockPos.push_back(sf::Vector2i(6, 10));
+    blockPos.push_back(sf::Vector2i(12, 4));
+    blockPos.push_back(sf::Vector2i(2, 12));
+    blockPos.push_back(sf::Vector2i(2, 10));
+    blockPos.push_back(sf::Vector2i(2, 11));
+    blockPos.push_back(sf::Vector2i(3, 10));
+    blockPos.push_back(sf::Vector2i(10, 14));
+    blockPos.push_back(sf::Vector2i(11, 14));
+    blockPos.push_back(sf::Vector2i(18, 14));
+    blockPos.push_back(sf::Vector2i(17, 14));
+    blockPos.push_back(sf::Vector2i(14, 7));
+    blockPos.push_back(sf::Vector2i(8, 7));
+    blockPos.push_back(sf::Vector2i(10, 9));
+    blockPos.push_back(sf::Vector2i(11, 10));
+    blockPos.push_back(sf::Vector2i(15, 10));
+    blockPos.push_back(sf::Vector2i(16, 10));
+    blockPos.push_back(sf::Vector2i(12, 8));
 
     placeSoftBlocks(blockPos);
 

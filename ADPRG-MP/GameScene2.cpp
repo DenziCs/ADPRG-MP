@@ -37,6 +37,41 @@ void GameScene2::onLoadObjects()
         pillar->setPosition(80 * ((i % 8) + 1), 80 * ((i / 8) + 2));
     }
 
+    std::vector<sf::Vector2i> blockPos;
+    blockPos.push_back(sf::Vector2i(3, 6));
+    blockPos.push_back(sf::Vector2i(2, 6));
+    blockPos.push_back(sf::Vector2i(4, 6));
+    blockPos.push_back(sf::Vector2i(5, 8));
+    blockPos.push_back(sf::Vector2i(3, 8));
+    blockPos.push_back(sf::Vector2i(4, 7));
+    blockPos.push_back(sf::Vector2i(6, 10));
+    blockPos.push_back(sf::Vector2i(12, 4));
+    blockPos.push_back(sf::Vector2i(2, 12));
+    blockPos.push_back(sf::Vector2i(2, 10));
+    blockPos.push_back(sf::Vector2i(2, 11));
+    blockPos.push_back(sf::Vector2i(3, 10));
+    blockPos.push_back(sf::Vector2i(10, 14));
+    blockPos.push_back(sf::Vector2i(11, 14));
+    blockPos.push_back(sf::Vector2i(18, 14));
+    blockPos.push_back(sf::Vector2i(17, 14));
+    blockPos.push_back(sf::Vector2i(14, 7));
+    blockPos.push_back(sf::Vector2i(8, 7));
+    blockPos.push_back(sf::Vector2i(10, 9));
+    blockPos.push_back(sf::Vector2i(11, 10));
+    blockPos.push_back(sf::Vector2i(15, 10));
+    blockPos.push_back(sf::Vector2i(16, 10));
+    blockPos.push_back(sf::Vector2i(12, 8));
+    blockPos.push_back(sf::Vector2i(14, 8));
+    blockPos.push_back(sf::Vector2i(12, 7));
+    blockPos.push_back(sf::Vector2i(13, 6));
+    blockPos.push_back(sf::Vector2i(2, 14));
+    blockPos.push_back(sf::Vector2i(2, 13));
+    blockPos.push_back(sf::Vector2i(3, 14));
+    blockPos.push_back(sf::Vector2i(4, 14));
+    blockPos.push_back(sf::Vector2i(4, 13));
+    blockPos.push_back(sf::Vector2i(8, 6));
+    blockPos.push_back(sf::Vector2i(8, 5));
+
     SoftBlockObject* block = new SoftBlockObject("SoftBlock2");
     this->registerObject(block);
     block->setPosition(80 * 5, 80 * 5);
@@ -75,4 +110,12 @@ void GameScene2::onUnloadObjects()
 
 void GameScene2::onUnloadResources()
 {
+}
+
+void GameScene2::placeSoftBlocks(std::vector<sf::Vector2i> blockPos) {
+    for (int i = 0; i < blockPos.size(); i++) {
+        SoftBlockObject* block = new SoftBlockObject("SoftBlock");
+        this->registerObject(block);
+        block->setPosition(Game::TILE_SIZE * blockPos[i].x, Game::TILE_SIZE * blockPos[i].y);
+    }
 }
