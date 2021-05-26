@@ -72,10 +72,6 @@ void GameScene2::onLoadObjects()
     blockPos.push_back(sf::Vector2i(8, 6));
     blockPos.push_back(sf::Vector2i(8, 5));
 
-    SoftBlockObject* block = new SoftBlockObject("SoftBlock2");
-    this->registerObject(block);
-    block->setPosition(80 * 5, 80 * 5);
-
     PlayerObject* planeObject = new PlayerObject("PlaneObject2");
     this->registerObject(planeObject);
     planeObject->setPosition(Game::TILE_SIZE * 1.5, Game::TILE_SIZE * 3.5);
