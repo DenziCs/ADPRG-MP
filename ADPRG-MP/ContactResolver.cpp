@@ -1,5 +1,5 @@
 #include "ContactResolver.h"
-#include"ApplicationManager.h"
+#include"SceneManager.h"
 #include"GameObjectManager.h"
 #include"ObjectPoolHolder.h"
 #include"APoolable.h"
@@ -15,7 +15,8 @@ void ContactResolver::resolve() {
 		switch (objects[1]->getObjectType()) {
 		case AGameObject::Enemy:
 		case AGameObject::ActiveBomb:
-			ApplicationManager::getInstance()->applicationQuit();
+			SceneManager::getInstance()->specifyNextScene(SceneManager::MAIN_MENU_SCENE_NAME);
+			SceneManager::getInstance()->loadScene(SceneManager::TRANSITION_SCENE_NAME);
 			break;
 		}
 

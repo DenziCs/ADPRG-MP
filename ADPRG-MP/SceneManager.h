@@ -11,9 +11,11 @@ public:
 	//scene names
 	static string MAIN_MENU_SCENE_NAME;
 	static string GAME_SCENE_NAME;
+	static string TRANSITION_SCENE_NAME;
 
 	static SceneManager* getInstance();
 	void registerScene(AScene* scene);
+	void specifyNextScene(string name);
 	void loadScene(string name); //also calls unload of the previous scene automatically
 	void unloadScene();
 	bool isSceneLoaded(string name);
@@ -29,6 +31,6 @@ private:
 	//SceneTable activeScenes;
 	AScene* activeScene;
 	string toLoadSceneName;
+	string nextToLoadSceneName;
 	bool isLoading = false;
-
 };

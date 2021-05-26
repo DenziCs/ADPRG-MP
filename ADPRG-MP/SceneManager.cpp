@@ -1,8 +1,10 @@
 #include "SceneManager.h"
+#include"TransitionScene.h"
 #include <iostream>
 
 string SceneManager::MAIN_MENU_SCENE_NAME = "MainMenuScene";
 string SceneManager::GAME_SCENE_NAME = "GameScene";
+string SceneManager::TRANSITION_SCENE_NAME = "TransitionScene";
 
 SceneManager* SceneManager::sharedInstance = NULL;
 
@@ -18,10 +20,12 @@ SceneManager* SceneManager::getInstance()
 
 void SceneManager::registerScene(AScene* scene)
 {
-	std::cout << scene->getSceneName() << " registered! \n";
 	this->storedScenes[scene->getSceneName()] = scene;
 }
 
+void SceneManager::specifyNextScene(string name) {
+	this->nextToLoadSceneName = name;
+}
 
 void SceneManager::checkLoadScene() {
 	if (this->isLoading) {
@@ -30,7 +34,6 @@ void SceneManager::checkLoadScene() {
 		this->activeScene->onLoadResources();
 		this->activeScene->onLoadObjects();
 		this->isLoading = false;
-
 	}
 }
 
@@ -38,6 +41,10 @@ void SceneManager::loadScene(string name)
 {
 	this->isLoading = true;
 	this->toLoadSceneName = name;
+	if (name == TRANSITION_SCENE_NAME) {
+		TransitionScene* scene = (TransitionScene*)this->storedScenes[TRANSITION_SCENE_NAME];
+		scene->nextScene = this->nextToLoadSceneName;
+	}
 }
 
 void SceneManager::unloadScene()

@@ -70,7 +70,8 @@ void MainMenuScreen::onButtonClick(UIButton* button)
 void MainMenuScreen::onButtonReleased(UIButton* button)
 {
 	if (button->getName() == "button_1") {
-		SceneManager::getInstance()->loadScene(SceneManager::GAME_SCENE_NAME);
+		SceneManager::getInstance()->specifyNextScene(SceneManager::GAME_SCENE_NAME);
+		SceneManager::getInstance()->loadScene(SceneManager::TRANSITION_SCENE_NAME);
 	}
 	else if (button->getName() == "button_2") {
 		QuitScreen* quitScreen = new QuitScreen("QuitScreen");

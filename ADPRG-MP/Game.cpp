@@ -14,6 +14,7 @@
 #include "EmptyGameObject.h"
 #include "EnemySwarmHandler.h"
 #include "MainMenuScene.h"
+#include"TransitionScene.h"
 #include "SceneManager.h"
 #include "GameScene.h"
 #include"PhysicsManager.h"
@@ -27,41 +28,10 @@ mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "Explosion Lad")
     //reigster scemes
     SceneManager::getInstance()->registerScene(new MainMenuScene());
     SceneManager::getInstance()->registerScene(new GameScene());
+    SceneManager::getInstance()->registerScene(new TransitionScene());
 
     //load first scene
     SceneManager::getInstance()->loadScene(SceneManager::MAIN_MENU_SCENE_NAME);
-
-    /*Comment this out for now
-
-    BGObject* bgObject = new BGObject("BGObject");
-    GameObjectManager::getInstance()->addObject(bgObject);
-
-    AirplanePlayer* planeObject = new AirplanePlayer("PlaneObject");
-    GameObjectManager::getInstance()->addObject(planeObject);
-
-
-    AirplaneSupport* support1 = new AirplaneSupport("AirSupport_1");
-    planeObject->attachChild(support1);
-    support1->setPosition(50, 100);
-
-    AirplaneSupport* support2 = new AirplaneSupport("AirSupport_2");
-    planeObject->attachChild(support2);
-    support2->setPosition(-50, 100);
-        
-    HUDScreen* hudScreen = new HUDScreen("HUDScreen");
-    GameObjectManager::getInstance()->addObject(hudScreen);
-   
-    //create N enemies via object pooling
-    srand(time(NULL));
-    EmptyGameObject* enemiesManager = new EmptyGameObject("EnemiesManager");
-    EnemySwarmHandler* swarmHandler = new EnemySwarmHandler(200, "SwarmHandler");
-    enemiesManager->attachComponent(swarmHandler);
-    GameObjectManager::getInstance()->addObject(enemiesManager);
-   */
-  
-    /*MainMenuScreen* mainMenuScreen = new MainMenuScreen("MainMenuScreen");
-    GameObjectManager::getInstance()->addObject(mainMenuScreen);*/
-
 };
 
 

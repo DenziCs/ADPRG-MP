@@ -14,4 +14,3 @@ public:
 	void onButtonClick(UIButton* button);
 	void onButtonReleased(UIButton* button);
 };
-

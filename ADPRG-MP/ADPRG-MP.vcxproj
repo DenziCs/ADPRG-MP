@@ -189,6 +189,8 @@
     <ClCompile Include="SpriteRenderer.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TimerUpdate.cpp" />
+    <ClCompile Include="TransitionScene.cpp" />
+    <ClCompile Include="TransitionUpdate.cpp" />
     <ClCompile Include="UIButton.cpp" />
     <ClCompile Include="UIButtonInputController.cpp" />
     <ClCompile Include="UIText.cpp" />
@@ -243,6 +245,8 @@
     <ClInclude Include="SpriteRenderer.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="TimerUpdate.h" />
+    <ClInclude Include="TransitionScene.h" />
+    <ClInclude Include="TransitionUpdate.h" />
     <ClInclude Include="UIButton.h" />
     <ClInclude Include="UIButtonInputController.h" />
     <ClInclude Include="UIText.h" />

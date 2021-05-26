@@ -162,6 +162,12 @@
     <ClCompile Include="GameScene3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TransitionScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TransitionUpdate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AComponent.h">
@@ -315,6 +321,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameScene3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TransitionScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TransitionUpdate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -12,8 +12,6 @@ BGObject::BGObject(std::string name) : AGameObject(name) {
 
 void BGObject::initialize()
 {
-	std::cout << "Declared as " << this->getName() << "\n";
-
 	//assign texture
 	sf::Sprite* sprite = new sf::Sprite();
 	sprite->setTexture(*TextureManager::getInstance()->getTexture("stageBG"));
