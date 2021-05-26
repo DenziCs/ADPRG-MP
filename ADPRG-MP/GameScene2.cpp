@@ -11,6 +11,8 @@
 #include "HUDScreen.h"
 #include"PhysicsManager.h"
 #include"Game.h"
+#include"TimerUpdate.h"
+#include"UIText.h"
 #include "SoftBlockObject.h"
 
 GameScene2::GameScene2() : AScene("GameScene2")
@@ -72,9 +74,7 @@ void GameScene2::onLoadObjects()
     blockPos.push_back(sf::Vector2i(8, 6));
     blockPos.push_back(sf::Vector2i(8, 5));
 
-    SoftBlockObject* block = new SoftBlockObject("SoftBlock2");
-    this->registerObject(block);
-    block->setPosition(80 * 5, 80 * 5);
+    placeSoftBlocks(blockPos);
 
     PlayerObject* planeObject = new PlayerObject("PlaneObject2");
     this->registerObject(planeObject);
@@ -88,6 +88,21 @@ void GameScene2::onLoadObjects()
 
     HUDScreen* hudScreen = new HUDScreen("HUDScreen2");
     this->registerObject(hudScreen);
+
+    UIText* timerText1 = new UIText("Timer");
+    this->registerObject(timerText1);
+    timerText1->setPosition(50, 40);
+    timerText1->setSize(30);
+    timerText1->setText("TIME");
+
+    UIText* timerText2 = new UIText("Timer");
+    this->registerObject(timerText2);
+    timerText2->setPosition(150, 40);
+    timerText2->setSize(30);
+    timerText2->setText(to_string(int(this->timer)));
+
+    TimerUpdate* updater = new TimerUpdate("timerUpdater", timer);
+    timerText2->attachComponent(updater);
 
     EmptyGameObject* physics = new EmptyGameObject("physics2");
     this->registerObject(physics);

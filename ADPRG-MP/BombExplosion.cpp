@@ -15,13 +15,13 @@ bool BombExplosion::hasCollided(ActiveBombObject* explosion, Direction direction
 
 	switch (direction) {
 	case Up:
-		if (bounds.top <= Game::TILE_SIZE * 3) return true; break;
+		if (bounds.top < Game::TILE_SIZE * 3) return true; break;
 	case Right:
-		if (bounds.left + bounds.width >= Game::WINDOW_WIDTH - Game::TILE_SIZE * 2) return true; break;
+		if (bounds.left + bounds.width > Game::WINDOW_WIDTH - Game::TILE_SIZE * 2) return true; break;
 	case Down:
-		if (bounds.top + bounds.height >= Game::WINDOW_HEIGHT - Game::TILE_SIZE) return true;  break;
+		if (bounds.top + bounds.height > Game::WINDOW_HEIGHT - Game::TILE_SIZE) return true;  break;
 	case Left:
-		if (bounds.left <= Game::TILE_SIZE) return true; break;
+		if (bounds.left < Game::TILE_SIZE) return true; break;
 	}
 
 	vector<AGameObject*> toSearch = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Hardblock);

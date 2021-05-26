@@ -20,18 +20,11 @@ void TextureManager::loadAll() {
 	bgTex->setRepeated(true);
 
 	loadTexture("sheet", "Media/Textures/spriteSheet.png");
-
-	loadTexture("eagle", "Media/Textures/Eagle.png");
-	loadTexture("raptor", "Media/Textures/Raptor.png");
 	loadTexture("ui_bg", "Media/Textures/f.png");
 	loadTexture("btn_normal", "Media/Textures/b_4.png");
 	loadTexture("btn_pressed", "Media/Textures/b_5.png");
 	loadTexture("hud_bg", "Media/Textures/bar_1.png");
-	loadTexture("avenger", "Media/Textures/Avenger.png");
 	loadTexture("title_bg", "Media/Textures/TitleScreenBG.png");
-	loadTexture("bullet", "Media/Textures/Bullet.png");
-	loadTexture("pillar", "Media/Textures/block.png");
-	//loadTexture("player", "Media/Textures/player.png");
 }
 
 void TextureManager::loadTexture(std::string key, std::string path) {
