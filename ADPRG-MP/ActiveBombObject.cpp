@@ -16,10 +16,12 @@ void ActiveBombObject::initialize()
 {
 	//assign texture
 	this->sprite = new sf::Sprite();
-	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("pillar"));
+	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
+	sf::IntRect textureSize(70, 40, 40, 40);
+	this->sprite->setTextureRect(textureSize);
 
-	sf::Vector2u textureSize = sprite->getTexture()->getSize();
-	this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
+	//sf::Vector2u textureSize = sprite->getTexture()->getSize();
+	this->sprite->setOrigin(textureSize.width / 2, textureSize.height / 2);
 
 	ActiveBombTimer* timer = new ActiveBombTimer("ActiveTimer");
 	this->attachComponent(timer);

@@ -4,6 +4,8 @@
 #include "EnemyBehavior.h"
 #include <iostream>
 #include "Renderer.h"
+#include <stdlib.h>     /* srand, rand */
+#include <time.h>       /* time */
 
 
 EnemyObject::EnemyObject(string name, EnemyType type) : AGameObject(name)
@@ -16,18 +18,25 @@ EnemyObject::EnemyObject(string name, EnemyType type) : AGameObject(name)
 void EnemyObject::initialize()
 {
 	//assign texture
+	int random = rand() % 2;
 	this->sprite = new sf::Sprite();
+	sf::IntRect textureSize;
 	switch (enemyType) {
 	case Walker:
-		this->sprite->setTexture(*TextureManager::getInstance()->getTexture("player"));
+		this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
+		if (random == 1){ textureSize = sf::IntRect(70, 0, 30, 30); }
+		else { textureSize = sf::IntRect(0, 40, 30, 30); }
 		break;
 	case Runner:
-		this->sprite->setTexture(*TextureManager::getInstance()->getTexture("player"));
+		this->sprite->setTexture(*TextureManager::getInstance()->getTexture("sheet"));
+		if (random == 1) { textureSize = sf::IntRect(70, 0, 30, 30); }
+		else { textureSize = sf::IntRect(0, 40, 30, 30); }
 		break;
 	}
 
-	sf::Vector2u textureSize = sprite->getTexture()->getSize();
-	this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
+	this->sprite->setTextureRect(textureSize);
+	//sf::Vector2u textureSize = sprite->getTexture()->getSize();
+	this->sprite->setOrigin(textureSize.width / 2, textureSize.height / 2);
 
 	Renderer* renderer = new Renderer("EnemySprite");
 	renderer->assignDrawable(this->sprite);
