@@ -12,7 +12,7 @@ public:
 
 	EnemyBehavior(string name, EnemyMovementType type, bool isRunner);
 	void perform();
-	// bool hasCollided();
+	bool hasCollided();
 
 private:
 	float speed;

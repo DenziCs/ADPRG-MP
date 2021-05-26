@@ -14,6 +14,33 @@ PlayerMovement::~PlayerMovement()
 	AComponent::~AComponent();
 }
 
+bool PlayerMovement::hasCollided(Direction direction) {
+	sf::Transformable* playerTransformable = this->getOwner()->getTransformable();
+	sf::FloatRect bounds = this->getOwner()->getGlobalBounds();
+
+	switch (direction) {
+	case Up:
+		if (bounds.top <= Game::TILE_SIZE * 3) return true; break;
+	case Right:
+		if (bounds.left + bounds.width >= Game::WINDOW_WIDTH - Game::TILE_SIZE * 2) return true; break;
+	case Down:
+		if (bounds.top + bounds.height >= Game::WINDOW_HEIGHT - Game::TILE_SIZE) return true;  break;
+	case Left:
+		if (bounds.left <= Game::TILE_SIZE) return true; break;
+	}
+
+	vector<AGameObject*> toSearch = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Hardblock);
+	for (int i = 0; i < toSearch.size(); i++) {
+		if (bounds.intersects(toSearch[i]->getGlobalBounds())) {
+			toSearch.clear();
+			return true;
+		}
+	}
+
+	toSearch.clear();
+	return false;
+}
+
 void PlayerMovement::perform()
 {
 	PlayerInputController* inputController = (PlayerInputController*)this->getOwner()->getComponentsOfType(ComponentType::Input)[0];
@@ -28,40 +55,17 @@ void PlayerMovement::perform()
 		offset.y -= this->SPEED_MULTIPLIER;
 		playerTransformable->move(offset * deltaTime.asSeconds());
 
-		sf::FloatRect bounds = this->getOwner()->getGlobalBounds();
-
-		if (bounds.top <= Game::TILE_SIZE * 3) {
+		if (hasCollided(Up)) {
 			playerTransformable->move(-offset * deltaTime.asSeconds());
-			return;
-		}
-
-		vector<AGameObject*> toSearch = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Hardblock);
-		for (int i = 0; i < toSearch.size(); i++) {
-			if (bounds.intersects(toSearch[i]->getGlobalBounds())) {
-				playerTransformable->move(-offset * deltaTime.asSeconds());
-				toSearch.clear();
-				return;
-			}
 		}
 	}
+
 	else if (inputController->isDown()) {
 		offset.y += this->SPEED_MULTIPLIER;
 		playerTransformable->move(offset * deltaTime.asSeconds());
 
-		sf::FloatRect bounds = this->getOwner()->getGlobalBounds();
-
-		if (bounds.top + bounds.height >= Game::WINDOW_HEIGHT - Game::TILE_SIZE) {
+		if (hasCollided(Down)) {
 			playerTransformable->move(-offset * deltaTime.asSeconds());
-			return;
-		}
-
-		vector<AGameObject*> toSearch = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Hardblock);
-		for (int i = 0; i < toSearch.size(); i++) {
-			if (bounds.intersects(toSearch[i]->getGlobalBounds())) {
-				playerTransformable->move(-offset * deltaTime.asSeconds());
-				toSearch.clear();
-				return;
-			}
 		}
 	}
 
@@ -69,20 +73,8 @@ void PlayerMovement::perform()
 		offset.x += this->SPEED_MULTIPLIER;
 		playerTransformable->move(offset * deltaTime.asSeconds());
 
-		sf::FloatRect bounds = this->getOwner()->getGlobalBounds();
-
-		if (bounds.left + bounds.width >= Game::WINDOW_WIDTH - Game::TILE_SIZE * 2) {
+		if (hasCollided(Right)) {
 			playerTransformable->move(-offset * deltaTime.asSeconds());
-			return;
-		}
-
-		vector<AGameObject*> toSearch = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Hardblock);
-		for (int i = 0; i < toSearch.size(); i++) {
-			if (bounds.intersects(toSearch[i]->getGlobalBounds())) {
-				playerTransformable->move(-offset * deltaTime.asSeconds());
-				toSearch.clear();
-				return;
-			}
 		}
 	}
 
@@ -90,20 +82,8 @@ void PlayerMovement::perform()
 		offset.x -= this->SPEED_MULTIPLIER;
 		playerTransformable->move(offset * deltaTime.asSeconds());
 
-		sf::FloatRect bounds = this->getOwner()->getGlobalBounds();
-
-		if (bounds.left <= Game::TILE_SIZE) {
+		if (hasCollided(Left)) {
 			playerTransformable->move(-offset * deltaTime.asSeconds());
-			return;
-		}
-
-		vector<AGameObject*> toSearch = GameObjectManager::getInstance()->getObjectsOfType(AGameObject::Hardblock);
-		for (int i = 0; i < toSearch.size(); i++) {
-			if (bounds.intersects(toSearch[i]->getGlobalBounds())) {
-				playerTransformable->move(-offset * deltaTime.asSeconds());
-				toSearch.clear();
-				return;
-			}
 		}
 	}
 }
