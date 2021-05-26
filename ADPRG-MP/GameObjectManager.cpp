@@ -26,6 +26,17 @@ List GameObjectManager::getAllObjects() {
 	return gameObjectList;
 }
 
+List GameObjectManager::getObjectsOfType(AGameObject::ObjectType type) {
+	List foundList;
+	for (int i = 0; i < this->gameObjectList.size(); i++) {
+		if (this->gameObjectList[i]->getObjectType() == type) {
+			foundList.push_back(this->gameObjectList[i]);
+		}
+	}
+
+	return foundList;
+}
+
 int GameObjectManager::activeObjects() {
 	return gameObjectList.size();
 }

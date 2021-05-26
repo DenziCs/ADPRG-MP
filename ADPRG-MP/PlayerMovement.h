@@ -10,5 +10,5 @@ public:
 	void perform();
 
 private:
-	const float SPEED_MULTIPLIER = 300.0f;
+	const float SPEED_MULTIPLIER = 60.0f;
 };

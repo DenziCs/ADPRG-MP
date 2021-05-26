@@ -138,6 +138,9 @@
     <ClCompile Include="EnemySwarmHandler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="EnemyBehavior.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AComponent.h">
@@ -269,6 +272,9 @@
     <ClInclude Include="EnemySwarmHandler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="EnemyBehavior.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Media\Textures\block.png">
@@ -338,6 +344,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Media\Textures\TitleScreenBG.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Media\Textures\player.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

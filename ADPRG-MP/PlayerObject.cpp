@@ -17,11 +17,9 @@ PlayerObject::PlayerObject(string name) : AGameObject(name) {
 
 void PlayerObject::initialize() {
     this->sprite = new sf::Sprite();
-    this->sprite->setTexture(*TextureManager::getInstance()->getTexture("eagle"));
+    this->sprite->setTexture(*TextureManager::getInstance()->getTexture("player"));
     sf::Vector2u textureSize = this->sprite->getTexture()->getSize();
     this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
-    this->transformable = *sprite;
-    this->transformable.setPosition(textureSize.x / 2, Game::TILE_SIZE * 3 + textureSize.y / 2);
 
     PlayerInputController* inputController = new PlayerInputController("MyPlayerInput");
     this->attachComponent(inputController);

@@ -10,6 +10,7 @@
 #include "EnemySwarmHandler.h"
 #include "HUDScreen.h"
 #include"PhysicsManager.h"
+#include"Game.h"
 
 GameScene::GameScene() :AScene("GameScene")
 {
@@ -33,19 +34,28 @@ void GameScene::onLoadObjects()
         PillarObject* pillar = new PillarObject("HardBlock");
         this->registerObject(pillar);
         pillar->setPosition(80 * ((i % 8) + 1), 80 * ((i / 8) + 2));
+
+        if (i == 0) {
+            cout << pillar->getGlobalBounds().left << endl;
+            cout << pillar->getGlobalBounds().width << endl;
+            cout << pillar->getGlobalBounds().top << endl;
+            cout << pillar->getGlobalBounds().height << endl;
+        }
     }
 
     PlayerObject* planeObject = new PlayerObject("PlaneObject");
     this->registerObject(planeObject);
+    planeObject->setPosition(Game::TILE_SIZE + 20, (Game::TILE_SIZE*3) + 20);
+    cout << planeObject->getTransformable()->getPosition().x << endl;
+    cout << planeObject->getGlobalBounds().left << endl;
+    cout << planeObject->getGlobalBounds().width << endl;
+    cout << planeObject->getGlobalBounds().top << endl;
+    cout << planeObject->getGlobalBounds().height << endl;
 
-    //create N enemies via object pooling
-    /*
-    srand(time(NULL));
     EmptyGameObject* enemiesManager = new EmptyGameObject("EnemiesManager");
-    EnemySwarmHandler* swarmHandler = new EnemySwarmHandler(5, "SwarmHandler");
+    EnemySwarmHandler* swarmHandler = new EnemySwarmHandler(1, "SwarmHandler");
     enemiesManager->attachComponent(swarmHandler);
     this->registerObject(enemiesManager);
-    */
 
     HUDScreen* hudScreen = new HUDScreen("HUDScreen");
     this->registerObject(hudScreen);

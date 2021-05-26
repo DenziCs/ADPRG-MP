@@ -1,20 +1,23 @@
 
 #pragma once
 #include "AComponent.h"
+
 class EnemyBehavior : public AComponent
 {
 public:
-	enum EnemyMovementType { Delay = 0, Forward = 1, SlowForward = 2, Side = 3 };
+	enum EnemyMovementType {
+		Vertical = 0,
+		Horizontal = 1
+	};
 
-	EnemyBehavior(string name);
+	EnemyBehavior(string name, EnemyMovementType type, bool isRunner);
 	void perform();
-	void configure(float delay);
-	void reset();
+	// bool hasCollided();
 
 private:
-	const float SPEED_MULTIPLIER = 100.0f;
-	EnemyMovementType movementType = Forward;
-	float ticks = 0.0f;
-	float delay = 0.0f;
-	float forwardDuration = 0.0f;
+	float speed;
+	float timer = 5.f;
+	EnemyMovementType movementType;
+	bool direction = true;
+		// denotes direction of movement. true = positive direction, false = negative direction
 };

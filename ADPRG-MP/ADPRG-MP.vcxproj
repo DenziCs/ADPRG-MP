@@ -153,6 +153,7 @@
     <ClCompile Include="ContactResolver.cpp" />
     <ClCompile Include="DebugRendererFactory.cpp" />
     <ClCompile Include="EmptyGameObject.cpp" />
+    <ClCompile Include="EnemyBehavior.cpp" />
     <ClCompile Include="EnemyObject.cpp" />
     <ClCompile Include="EnemySwarmHandler.cpp" />
     <ClCompile Include="Entity.cpp" />
@@ -199,6 +200,7 @@
     <ClInclude Include="ContactResolver.h" />
     <ClInclude Include="DebugRendererFactory.h" />
     <ClInclude Include="EmptyGameObject.h" />
+    <ClInclude Include="EnemyBehavior.h" />
     <ClInclude Include="EnemyObject.h" />
     <ClInclude Include="EnemySwarmHandler.h" />
     <ClInclude Include="Entity.h" />
@@ -249,6 +251,7 @@
     <Image Include="Media\Textures\field.png" />
     <Image Include="Media\Textures\l1.png" />
     <Image Include="Media\Textures\l2.png" />
+    <Image Include="Media\Textures\player.png" />
     <Image Include="Media\Textures\Raptor.png" />
     <Image Include="Media\Textures\s1.png" />
     <Image Include="Media\Textures\s2.png" />

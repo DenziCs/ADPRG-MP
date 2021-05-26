@@ -13,7 +13,7 @@ PillarObject::PillarObject(string name) : AGameObject(name) {
 void PillarObject::initialize() {
 	this->sprite = new sf::Sprite();
 	this->sprite->setTexture(*TextureManager::getInstance()->getTexture("pillar"));
-	this->transformable = *sprite;
+	// this->transformable = *sprite;
 
 	Renderer* renderer = new Renderer("BlockRenderer");
 	renderer->assignDrawable(this->sprite);
