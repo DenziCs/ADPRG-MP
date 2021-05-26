@@ -1,28 +1,37 @@
 #include "PlayerAttack.h"
 
+PlayerAttack::PlayerAttack(string name) : AComponent(name, Script) {
+	this->setUpPools();
+}
+
 PlayerAttack::~PlayerAttack() {
 	AComponent::~AComponent();
 }
 
-void PlayerAttack::setUpPool(int numRounds) {
-	GameObjectPool* bulletPool = new GameObjectPool(ObjectPoolHolder::BULLET_POOL_TAG, new Projectile("bullet"), numRounds, NULL);
-	bulletPool->initialize();
-	ObjectPoolHolder::getInstance()->registerObjectPool(bulletPool);
+void PlayerAttack::setUpPools() {
+	GameObjectPool* bombPool = new GameObjectPool(ObjectPoolHolder::BOMB_POOL_TAG, new BombObject("bomb"), 2, NULL);
+	bombPool->initialize();
+	ObjectPoolHolder::getInstance()->registerObjectPool(bombPool);
+
+	GameObjectPool* activePool = new GameObjectPool(ObjectPoolHolder::EXPLOSION_POOL_TAG, new ActiveBombObject("activebomb"), 18, NULL);
+	activePool->initialize();
+	ObjectPoolHolder::getInstance()->registerObjectPool(activePool);
 }
 
 void PlayerAttack::perform() {
 	PlayerInputController* inputController = (PlayerInputController*)this->getOwner()->getComponentsOfType(ComponentType::Input)[0];
-	GameObjectPool* bulletPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::BULLET_POOL_TAG);
+	GameObjectPool* bombPool = ObjectPoolHolder::getInstance()->getPool(ObjectPoolHolder::BOMB_POOL_TAG);
 
-	if (inputController->isFiring()) {
+	if (inputController->isDropping()) {
 		this->ticks += this->deltaTime.asSeconds();
 
-		if (this->ticks > FIRE_INTERVAL) {
+		if (this->ticks > DROP_INTERVAL) {
 			this->ticks = 0.0f;
-			Projectile* bullet = (Projectile*)bulletPool->requestPoolable();
+			BombObject* bomb = (BombObject*)bombPool->requestPoolable();
 			sf::Vector2f spawnPoint = this->getOwner()->getTransformable()->getPosition();
-			spawnPoint.y -= 20;
-			bullet->getTransformable()->setPosition(spawnPoint);
+			spawnPoint.x = (int(spawnPoint.x / Game::TILE_SIZE)) * Game::TILE_SIZE * 1.5;
+			spawnPoint.y = (int(spawnPoint.y / Game::TILE_SIZE)) * Game::TILE_SIZE * 1.5;
+			bomb->getTransformable()->setPosition(spawnPoint);
 		}
 	}
 }

@@ -5,16 +5,13 @@
 #include"Game.h"
 #include<iostream>
 
-class ProjectileMovement : public AComponent
+class ActiveBombTimer : public AComponent
 {
 public:
-	ProjectileMovement(string name);
-	~ProjectileMovement();
+	ActiveBombTimer(string name);
+	~ActiveBombTimer();
 	void perform();
 	void reset();
 private:
-	void explode();
-
-	const float BULLET_SPEED = 500.f;
-	float range = 300.f;
+	float timer = 0.8f;
 };

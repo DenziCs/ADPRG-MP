@@ -1,10 +1,10 @@
 #pragma once
 #include "APoolable.h"
 
-class BombObject : public APoolable
+class ActiveBombObject : public APoolable
 {
 public:
-	BombObject(string name);
+	ActiveBombObject(string name);
 	void initialize();
 	sf::FloatRect getGlobalBounds();
 	void onRelease() {}
@@ -12,4 +12,5 @@ public:
 	APoolable* clone();
 private:
 	sf::Sprite* sprite;
+	float timer = 0.8f;
 };

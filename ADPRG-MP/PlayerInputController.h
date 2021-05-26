@@ -12,12 +12,12 @@ public:
 	bool isDown();
 	bool isLeft();
 	bool isRight();
-	bool isFiring();
+	bool isDropping();
 private:
 	const float SPEED_MULTIPLIER = 300.0f;
 	bool moveUp = false;
 	bool moveDown = false;
 	bool moveLeft = false;
 	bool moveRight = false;
-	bool firing = false;
+	bool drop = false;
 };

@@ -15,7 +15,8 @@ public:
 		Hardblock = 3,
 		Softblock = 4,
 		Powerup = 5,
-		Bomb = 6
+		Bomb = 6,
+		ActiveBomb = 7
 	};
 
 	AGameObject(std::string  name);

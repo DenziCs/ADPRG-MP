@@ -1,19 +1,22 @@
 #pragma once
 #include "AComponent.h"
 #include"PlayerInputController.h"
-#include"Projectile.h"
+#include"BombObject.h"
+#include"ActiveBombObject.h"
 #include"GameObjectPool.h"
 #include"ObjectPoolHolder.h"
+#include"Game.h"
 #include<iostream>
 
 class PlayerAttack : public AComponent
 {
 public:
-	PlayerAttack(string name) : AComponent(name, Script) {}
+	PlayerAttack(string name);
 	~PlayerAttack();
-	void setUpPool(int numRounds);
 	void perform();
 private:
-	const float FIRE_INTERVAL = 0.1f;
+	void setUpPools();
+
+	const float DROP_INTERVAL = 0.8f;
 	float ticks = 0.0f;
 };

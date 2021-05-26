@@ -1,8 +1,8 @@
 
 #include "ObjectPoolHolder.h"
 
-string ObjectPoolHolder::ENEMY_POOL_TAG = "EnemyPool";
-string ObjectPoolHolder::BULLET_POOL_TAG = "BulletPool";
+string ObjectPoolHolder::BOMB_POOL_TAG = "BombPool";
+string ObjectPoolHolder::EXPLOSION_POOL_TAG = "ExplosionPool";
 
 ObjectPoolHolder* ObjectPoolHolder::sharedInstance = NULL;
 

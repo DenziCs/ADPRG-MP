@@ -36,7 +36,7 @@ void PlayerInputController::perform()
 		this->moveRight = keyFlag;
 		break;
 	case sf::Keyboard::Space:
-		this->firing = keyFlag;
+		this->drop = keyFlag;
 		break;
 	}
 	//will create multiple if escape key is released multiple times
@@ -67,6 +67,6 @@ bool PlayerInputController::isRight()
 	return this->moveRight;
 }
 
-bool PlayerInputController::isFiring() {
-	return this->firing;
+bool PlayerInputController::isDropping() {
+	return this->drop;
 }

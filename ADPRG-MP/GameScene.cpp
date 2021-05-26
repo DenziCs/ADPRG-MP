@@ -38,7 +38,7 @@ void GameScene::onLoadObjects()
 
     PlayerObject* planeObject = new PlayerObject("PlaneObject");
     this->registerObject(planeObject);
-    planeObject->setPosition(Game::TILE_SIZE + 20, (Game::TILE_SIZE*3) + 20);
+    planeObject->setPosition(Game::TILE_SIZE * 1.5, Game::TILE_SIZE * 3.5);
 
     srand(time(NULL));
     EmptyGameObject* enemiesManager = new EmptyGameObject("EnemiesManager");

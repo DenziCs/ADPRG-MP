@@ -9,8 +9,8 @@ class ObjectPoolHolder
 {
 public:
 	//pool names
-	static string ENEMY_POOL_TAG;
-	static string BULLET_POOL_TAG;
+	static string BOMB_POOL_TAG;
+	static string EXPLOSION_POOL_TAG;
 
 	static ObjectPoolHolder* getInstance();
 

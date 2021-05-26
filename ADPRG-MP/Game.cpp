@@ -19,7 +19,7 @@
 #include"PhysicsManager.h"
 
 Game::Game() : 
-mWindow(sf::VideoMode(Game::TILE_SIZE * 20, Game::TILE_SIZE * 15), "Explosion Lad") {
+mWindow(sf::VideoMode(Game::WINDOW_WIDTH, Game::WINDOW_HEIGHT), "Explosion Lad") {
     TextureManager::getInstance()->loadAll();
     FontManager::getInstance()->loadAll();
     ApplicationManager::getInstance()->initialize(&this->mWindow);

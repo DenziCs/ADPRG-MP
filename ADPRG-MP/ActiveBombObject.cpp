@@ -1,19 +1,18 @@
-#include "BombObject.h"
+#include "ActiveBombObject.h"
+#include"ActiveBombTimer.h"
 #include "TextureManager.h"
 #include "Game.h"
 #include "EnemyBehavior.h"
 #include <iostream>
 #include "Renderer.h"
-#include"BombExplosion.h"
 
-
-BombObject::BombObject(string name) : APoolable(name)
+ActiveBombObject::ActiveBombObject(string name) : APoolable(name)
 {
-	this->objectType = Bomb;
+	this->objectType = ActiveBomb;
 	this->sprite = NULL;
 }
 
-void BombObject::initialize()
+void ActiveBombObject::initialize()
 {
 	//assign texture
 	this->sprite = new sf::Sprite();
@@ -22,28 +21,28 @@ void BombObject::initialize()
 	sf::Vector2u textureSize = sprite->getTexture()->getSize();
 	this->sprite->setOrigin(textureSize.x / 2, textureSize.y / 2);
 
-	BombExplosion* exploder = new BombExplosion("Exploder");
-	this->attachComponent(exploder);
+	ActiveBombTimer* timer = new ActiveBombTimer("ActiveTimer");
+	this->attachComponent(timer);
 
 	Renderer* renderer = new Renderer("BombRenderer");
 	renderer->assignDrawable(this->sprite);
 	this->attachComponent(renderer);
 }
 
-sf::FloatRect BombObject::getGlobalBounds() {
+sf::FloatRect ActiveBombObject::getGlobalBounds() {
 	sf::FloatRect bounds = this->sprite->getGlobalBounds();
 	bounds = this->getGlobalTransform().transformRect(bounds);
 	return bounds;
 }
 
-void BombObject::onActivate()
+void ActiveBombObject::onActivate()
 {
-	BombExplosion* exploder = (BombExplosion*)this->findComponentByName("Exploder");
-	exploder->reset();
+	ActiveBombTimer* timer = (ActiveBombTimer*)this->findComponentByName("ActiveTimer");
+	timer->reset();
 }
 
-APoolable* BombObject::clone()
+APoolable* ActiveBombObject::clone()
 {
-	APoolable* copyObj = new BombObject(this->name);
+	APoolable* copyObj = new ActiveBombObject(this->name);
 	return copyObj;
 }

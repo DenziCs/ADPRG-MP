@@ -3,6 +3,7 @@
 #include "Game.h"
 #include "PlayerInputController.h"
 #include "PlayerMovement.h"
+#include"PlayerAttack.h"
 #include "TextureManager.h"
 #include "Renderer.h"
 #include "SpriteRenderer.h"
@@ -26,6 +27,9 @@ void PlayerObject::initialize() {
 
     PlayerMovement* movement = new PlayerMovement("MyMovement");
     this->attachComponent(movement);
+
+    PlayerAttack* attack = new PlayerAttack("MyBombDrop");
+    this->attachComponent(attack);
 
     Renderer* renderer = new Renderer("PlayerRenderer");
     renderer->assignDrawable(this->sprite);

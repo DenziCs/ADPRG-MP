@@ -143,11 +143,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AComponent.cpp" />
+    <ClCompile Include="ActiveBombObject.cpp" />
+    <ClCompile Include="ActiveBombTimer.cpp" />
     <ClCompile Include="AGameObject.cpp" />
     <ClCompile Include="APoolable.cpp" />
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="AScene.cpp" />
     <ClCompile Include="BGObject.cpp" />
+    <ClCompile Include="BombExplosion.cpp" />
     <ClCompile Include="BombObject.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="ContactResolver.cpp" />
@@ -170,6 +173,7 @@
     <ClCompile Include="ObjectPoolHolder.cpp" />
     <ClCompile Include="PhysicsManager.cpp" />
     <ClCompile Include="PillarObject.cpp" />
+    <ClCompile Include="PlayerAttack.cpp" />
     <ClCompile Include="PlayerObject.cpp" />
     <ClCompile Include="PlayerInputController.cpp" />
     <ClCompile Include="PlayerMovement.cpp" />
@@ -187,12 +191,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AComponent.h" />
+    <ClInclude Include="ActiveBombObject.h" />
+    <ClInclude Include="ActiveBombTimer.h" />
     <ClInclude Include="AGameObject.h" />
     <ClInclude Include="APoolable.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="ARendererFactory.h" />
     <ClInclude Include="AScene.h" />
     <ClInclude Include="BGObject.h" />
+    <ClInclude Include="BombExplosion.h" />
     <ClInclude Include="BombObject.h" />
     <ClInclude Include="ButtonListener.h" />
     <ClInclude Include="Collider.h" />
@@ -216,6 +223,7 @@
     <ClInclude Include="ObjectPoolHolder.h" />
     <ClInclude Include="PhysicsManager.h" />
     <ClInclude Include="PillarObject.h" />
+    <ClInclude Include="PlayerAttack.h" />
     <ClInclude Include="PlayerObject.h" />
     <ClInclude Include="PlayerInputController.h" />
     <ClInclude Include="PlayerMovement.h" />
